@@ -1,0 +1,33 @@
+Build Front-End Web Applications from Scratch
+Day 1 "Overview of JavaScript and React"
+================================================
+
+- Web Apps:
+	* Interactive user interfaces
+	* Ability to persist data from one visit to the next
+	* Front-end interfaces that can update without needing to make a request to the server on every click
+
+- React is a JavaScript library for building user interfaces. 
+
+- React solves the problem of messy spaghetti code by breaking the code into components. 
+
+- There is typically one component for each discrete feature of the site, and each of the components follows the same general structure. 
+
+- This means that the same code patterns will be enforced throughout the application, which will make the site more maintainable and readable as it is updated.
+
+- Does a lot of clever calculations to make sure updates are calculated efficiently, improving performance.
+
+SEVEN FUNDAMENTAL DATA TYPES:
+1) Number
+2) String
+3) Boolean
+4) Null (the intentional absence of a value)
+5) Undefined (the absence of a value, but different use than null)
+6) Symbol (a newer feature, unique identifier, useful in complex coding)
+7) Object (Collections of related data)
+
+1-6 = Primitive Data Types
+7   = Complex
+
+
+

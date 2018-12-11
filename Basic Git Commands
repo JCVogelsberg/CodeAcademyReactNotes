@@ -1,0 +1,34 @@
+--------------------------
+# Basic Git Commands
+--------------------------
+
+'cd Desktop' - change directory to 'Desktop'
+
+'mkdir derp' - create repo named 'derp'
+
+'ls' - show everything in current directory
+
+'ls -a' - show everything, including hidden files
+
+'git init' - initialize directory for git
+
+'git status' - what has/hasn't been commited, changes since last commit
+
+'git add' - ADD files in the repo to the commit
+  * 'git add file-name.txt' - just 'file-name.txt'
+  * 'git add .' - add EVERYTHING in the directory
+  * 'git add --all' - add EVERYTHING in ALL the directories
+
+'git rm file-name.txt' - REMOVE files in the repo to the commit
+
+'git commit' - record changes to the repo
+  * 'git commit -m "Herp derp."' - commit with the msg 'Herp derp.'
+
+--------------------------
+# Connecting To GitHub
+--------------------------
+
+'$ git remote add origin https://github.com/YourUsername/repo-name.git' - bind local repo to remote repo
+
+'git push -u origin master' - push to remote repo
+

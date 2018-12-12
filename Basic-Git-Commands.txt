@@ -32,3 +32,8 @@
 
 'git push -u origin master' - push to remote repo
 
+'git clone git@github.com:JCVogelsberg/ProjectName.git'
+
+
+
+

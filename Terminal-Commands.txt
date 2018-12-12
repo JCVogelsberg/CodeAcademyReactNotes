@@ -8,4 +8,6 @@ Terminal Commands
 
 - clear: clears screen (same as CMD+K)
 
+- touch derp.txt: create a new, empty file name 'derp.txt' in the current directory
+
 - 

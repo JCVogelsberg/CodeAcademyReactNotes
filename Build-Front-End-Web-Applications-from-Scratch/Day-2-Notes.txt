@@ -12,11 +12,12 @@ Keywords to create variables:
   * Since ES6 (2015), 'let' and 'const' are now preferred.
 
 
+- String Interpolation: Using template literals to embed variables into strings.
+
 Template Literals:
   const myName = 'Jay';
   const myCity = 'Tampa';
 
   console.log(`My name is ${myName}. My favorite city is ${myCity}.`);
   //Output: 'My name is Jay. My favorite city is Tampa.'
-
 

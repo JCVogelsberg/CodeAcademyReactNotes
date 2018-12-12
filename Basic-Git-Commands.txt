@@ -32,8 +32,11 @@
 
 'git push -u origin master' - push to remote repo
 
-'git clone git@github.com:JCVogelsberg/ProjectName.git'
+'git fetch origin' - only downloads new data from a remote repo
 
+'git pull origin master' - updates EVERYTHING to match remote repo
+
+'git clone git@github.com:JCVogelsberg/ProjectName.git'
 
 
 

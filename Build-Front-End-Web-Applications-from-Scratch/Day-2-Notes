@@ -1,0 +1,22 @@
+Day 2  - Build Front-End Web...
+================================================
+
+Keywords to create variables:
+
+- var: used in pre-ES6 versions of JS.
+
+- let:  the variable can be reassigned a different value
+
+- const: short for "constant", cannot be reassigned after declaration
+
+  * Since ES6 (2015), 'let' and 'const' are now preferred.
+
+
+Template Literals:
+  const myName = 'Jay';
+  const myCity = 'Tampa';
+
+  console.log(`My name is ${myName}. My favorite city is ${myCity}.`);
+  //Output: 'My name is Jay. My favorite city is Tampa.'
+
+

@@ -1,0 +1,11 @@
+Terminal Commands
+--------------------
+
+- pwd: 'print working directory', shows where you currently are ('working directory')
+
+- ls: list everything in the working directory
+  ls -la: list long format (including hidden files)
+
+- clear: clears screen (same as CMD+K)
+
+- 

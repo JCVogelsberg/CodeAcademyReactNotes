@@ -2,14 +2,6 @@
 # Basic Git Commands
 --------------------------
 
-'cd Desktop' - change directory to 'Desktop'
-
-'mkdir derp' - create repo named 'derp'
-
-'ls' - show everything in current directory
-
-'ls -a' - show everything, including hidden files
-
 'git init' - initialize directory for git
 
 'git status' - what has/hasn't been commited, changes since last commit

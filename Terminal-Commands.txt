@@ -6,8 +6,12 @@ Terminal Commands
 - ls: list everything in the working directory
   ls -la: list long format (including hidden files)
 
+- cd Desktop: change directory to 'Desktop'
+
+- mkdir derp: create repo named 'derp'
+
 - clear: clears screen (same as CMD+K)
 
-- touch derp.txt: create a new, empty file name 'derp.txt' in the current directory
+- touch fileName.txt: create a new, empty file name 'fileName.txt' in the current directory
 
 - 

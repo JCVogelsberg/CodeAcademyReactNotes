@@ -14,4 +14,8 @@ Terminal Commands
 
 - touch fileName.txt: create a new, empty file name 'fileName.txt' in the current directory
 
+- echo 'Test text' >> hello_cli.txt:  create a new file named 'hello_cli.txt' and add 'Test text' to that file
+
+- cat hello_cli.txt: print the contents of the 'hello_cli.txt' file to the terminal
+
 - 

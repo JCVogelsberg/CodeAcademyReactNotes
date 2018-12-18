@@ -1,5 +1,5 @@
 Day 6  - Functions
-================================================
+-------------------------
 
 Functions 
 
@@ -9,7 +9,7 @@ Functions
 
 - Used to organize chunks of code that can be reused repeatedly
 
---- --- --- --- --- --- --- --- --- --- --- --- 
+------------------------- 
 
 Creating Functions
 - Function declaration:
@@ -18,5 +18,21 @@ Creating Functions
     console.log("I'm an example function.");
   }
 
+-------------------------
 
-  
+New in ES6: Default parameters
+
+- allow parameters to have a predetermined value in case there is no argument passed into the function or if the argument is undefined when called.
+
+Example:
+	function greeting (name = 'stranger') {
+	  console.log(`Hello, ${name}!`)
+	}
+
+* stranger is the default parameter
+
+
+Return statement: captrues the result of a function to display 
+
+
+

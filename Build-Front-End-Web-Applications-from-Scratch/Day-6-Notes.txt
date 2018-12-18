@@ -1,0 +1,22 @@
+Day 6  - Functions
+================================================
+
+Functions 
+
+- the building blocks of all JS programs
+
+- Like the "verbs" of programming, when they are executed, they put things into motion
+
+- Used to organize chunks of code that can be reused repeatedly
+
+--- --- --- --- --- --- --- --- --- --- --- --- 
+
+Creating Functions
+- Function declaration:
+
+  function exampleFunction() {
+    console.log("I'm an example function.");
+  }
+
+
+  

@@ -1,0 +1,64 @@
+Day 9  - Loops
+-------------------------
+
+- A loop is a programming tool that repeats a set of instructions until a
+specified condition, called a 'stopping condition' is reached
+
+- Iterate: means 'to repeat'
+
+
+---------------- FOR LOOP ----------------
+- Good for: when we know how many times the loop should run
+- Includes an 'iterator variable' (traditionally, the letter 'i')
+- Iterator variable is:
+  * initialized
+  * checked against the stopping condition
+  * assigned a new value on each iteration
+
+ Example:
+   for (let i = 0; i < 4; i++) {
+     console.log(i);
+   };
+
+- Looping through an Array
+  * Use length to determine number of elements in an array
+  * make 'array.length' the stopping condition
+  * console.log array[iterator variable]
+
+Example:
+  const vacationSpots = ['Bali', 'Paris', 'Tulum'];
+  for (let i = 0; i < vacationSpots.length; i++ ) {
+    console.log(vacationSpots[i]);
+  };
+
+NESTED LOOPS
+- A loop running inside another loop
+- One use is to compare the elements in two arrays
+- For each iteration of the OUTER for loop, the INNER for loop will run completely
+
+Example:
+  const firstArray = [6, 19, 20, 23, 45, 82, 94, 30, 29, 66 ];
+  const secondArray = [19, 81, 2, 84, 47, 34, 75, 43, 23, 76, 46 ];
+
+  for (let i = 0; i < firstArray.length; i++) {
+    for (let j = 0; j < secondArray.length; j++) {
+      if (firstArray[i] === secondArray[j]) {
+        console.log('Both loops have the number: ' + secondArray[j])
+      }
+    }
+  };
+
+---------------- WHILE LOOP ----------------
+- Good for: when we DON'T know how many times the loop should run
+- The variable is declared before the loop
+- While the test condition evaluates to true, loop continues to iterate
+
+Example:
+  let counterTwo = 1;         // Declare variable
+  while (counterTwo < 4) {    // Start While loop
+    console.log(counterTwo);  // Do Something
+    counterTwo++;             // Increase iterator variable
+  }
+
+
+---------------- DO...WHILE STATEMENTS ----------------

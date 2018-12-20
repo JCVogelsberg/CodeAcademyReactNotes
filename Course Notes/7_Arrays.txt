@@ -6,12 +6,10 @@ Day 7  - Arrays
 
 * * * "Whenever order matters an array is usually the best possible data structure to use." * * *
 
-
 - Access an item: myArray[0]
-
 - Change an item: myArray[0] = 'new string';
 
-
+Example:
   let sampleArray = [
     'item #1',
     'item #2',
@@ -24,12 +22,9 @@ sampleArray[3];  <--- will return undefined
 Reassign a value to an element in an Array:
   sampleArray[0] = 'derf';  <--- will change 'item#1' to 'derf'
 
-
 -------------------------
 
-
 ARRAY METHODS:
-
 
 ---------------- Mutating Array Methods ----------------
 
@@ -37,22 +32,17 @@ ARRAY METHODS:
 - removes or replaces existing elements and/or adding new elements.
 - sampleArray.splice(1, 0, 'derf');   <--- 1st index position, replaces 0, adding 'derf'
 
-
 .push
 - Adds an additional element to the end of an array
-
 
 .pop()
 - Remove the last item from an array
 
-
 .shift()
 - removes the first element from an array and returns that removed element
 
-
 .unshift()
 - adds one or more elements to the beginning of an array and returns the new length of the array
-
 
 ---------------- Non-Mutating Array Methods ----------------
 
@@ -60,16 +50,13 @@ ARRAY METHODS:
 - creates and returns a new string by concatenating all of the elements in an array
 - Takes a single parameter, which is inserted between elements
 
-
 .slice()
 - returns elements in a array from start index point to end index point. - Takes two arguments (if only one entered, end point is last element)
 - Just returns items, doesn't remove them
 
-
 .concat()
 - Returns a merging of two or more arrays  <--- array1.concat(array2);
 - Does not change either array
-
 
 .indexOf()
 - Returns the first index at which a given element can be found

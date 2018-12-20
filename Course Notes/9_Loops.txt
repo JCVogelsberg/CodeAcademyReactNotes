@@ -62,3 +62,21 @@ Example:
 
 
 ---------------- DO...WHILE STATEMENTS ----------------
+- Good for: when you want it done AT LEAST ONCE, then loop until a condition is met.
+-
+
+Example:
+  let countString = '';
+  let i = 0;
+
+  do {
+    countString = countString + i;
+    i++;
+  } while (i < 5);
+
+  console.log(countString);
+
+
+---------------- 'BREAK" KEYWORD' ----------------
+- Stops a loop from continuing, even though the stopping condition hasn't been met
+-

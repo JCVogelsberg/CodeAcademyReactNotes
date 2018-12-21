@@ -4,10 +4,13 @@ Day 6  - Functions
 Functions
 
 - The "verbs" of programming, functions are the building blocks of all JS programs
-
 - Reusable blocks of code that group together a sequence of statements to perform a specific task
-
 - Return statement: captures the result of a function to display
+- Functions are first class objects, they can have properties and methods.
+- Since functions are a type of object, they have properties such as:
+  * .length
+  * .name
+  * ...and methods such as .toString()
 
 -------------------------
 
@@ -51,7 +54,7 @@ Creating Functions
 
     * single-line code blocks in function don't require curly braces!
 
-      const squareNum = num => num * num; 
+      const squareNum = num => num * num;
 
 -------------------------
 

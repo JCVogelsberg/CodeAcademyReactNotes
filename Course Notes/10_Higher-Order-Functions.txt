@@ -1,0 +1,26 @@
+Day 10 - Higher-Order Functions
+-------------------------
+
+- Higher-order functions:
+  * A higher-order function is a function that either accepts functions as
+  parameters, returns a function, or both!
+  * Can be passed to other functions as parameters
+  
+- Assigning functions to variables:
+
+Example:
+  const thisFunctionNameIsEntirelyTooGoddamnLong = () => {
+      console.log('Do something.');
+  };
+
+  const shorter = thisFunctionNameIsEntirelyTooGoddamnLong;
+  shorter();
+
+  * This function call is shorter!
+  * Can be called with parentheses containing parameters
+  * Assigning it to variable does NOT feature parentheses (just want value of
+  function, not the value it returns)
+
+
+
+---------------- xxx ----------------

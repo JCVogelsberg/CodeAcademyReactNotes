@@ -17,21 +17,21 @@ Functions
 Creating Functions
 - Function Declaration:
 
-  function exampleFunction() {
+  function exampleFunction(param) {
     console.log("I'm an example function.");
   }
 
 
 - Function Expression:
 
-  const exampleFunction = function() {
+  const exampleFunction = function(param) {
     console.log("I'm an example function.");
   }
 
 
 - Arrow Function Syntax
 
-  const exampleFunction = () => {
+  const exampleFunction = param => {
     console.log("I'm an example function.");
   }
 

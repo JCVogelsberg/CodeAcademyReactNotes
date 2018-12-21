@@ -1,11 +1,14 @@
 Day 10 - Higher-Order Functions
 -------------------------
 
-- Higher-order functions:
-  * A higher-order function is a function that either accepts functions as
+- A higher-order function is a function that either accepts functions as
   parameters, returns a function, or both!
-  * Can be passed to other functions as parameters
-  
+- Can be passed to other functions as parameters
+- Callback Functions: 
+  * Functions that get passed in as parameters and invoked  
+  * Callback functions do NOT have parentheses (parentheses = invoking)
+
+
 - Assigning functions to variables:
 
 Example:

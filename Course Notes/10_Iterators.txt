@@ -1,0 +1,66 @@
+Day 10 - Iterators
+-------------------------
+
+- Built-in JS array methods that help us iterate are called ITERATION METHODS or just ITERATORS.
+
+- Iterators are methods called on arrays to manipulate elements and return values
+
+
+---------------- .forEach() ----------------
+
+  -  executes a provided function once for each array element
+
+  Example:
+    const artists = ['Picasso', 'Kahlo', 'Matisse', 'Magritte'];
+
+    artists.forEach(artist => {
+      console.log(artist + ' is one of my favorite artists.');
+    });
+
+    // expected output: 
+      Picasso is one of my favorite artists.
+      Kahlo is one of my favorite artists.
+      Matisse is one of my favorite artists.
+      Magritte is one of my favorite artists.  
+
+
+
+---------------- .map()  ----------------  
+
+  - creates a new array with the results of calling a provided function on every element in the calling array.
+
+  Example:
+    const bunchaMonkeys = ['Bubbles', 'Skippy', 'Bobo'];
+
+    const nameMonkeys = bunchaMonkeys.map(param => {
+    return param + ' is a Monkey';
+    });
+
+    console.log(nameMonkeys);
+    // expected output: [ 'Bubbles is a Monkey', 'Skippy is a Monkey', 'Bobo is a Monkey' ]
+
+
+---------------- .filter() ----------------  
+
+  - creates a new array with all elements that pass the test implemented by the provided function.
+
+  Example:
+    const things = ['desk', 'chair', 5, 100, false];
+
+    const onlyNumbers = things.filter(thing => {
+      return typeof thing === 'string';
+    });
+
+    console.log(onlyNumbers);
+    // expected output: [ 'desk', 'chair' ]
+
+
+
+
+
+
+
+
+
+
+

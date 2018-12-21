@@ -1,4 +1,5 @@
 Day 3  - Build Front-End Web...
 ================================================
 
-Bash - Open-source CLI, default for Linux and Mac. Accessed using Terminal
+
+- Bash: Open-source CLI, default for Linux and Mac. Accessed using Terminal

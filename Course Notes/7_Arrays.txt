@@ -42,7 +42,9 @@ ARRAY METHODS:
 - removes the first element from an array and returns that removed element
 
 .unshift()
-- adds one or more elements to the beginning of an array and returns the new length of the array
+- adds one or more elements to the beginning of an array and returns the new
+length of the array
+
 
 ---------------- Non-Mutating Array Methods ----------------
 
@@ -63,6 +65,11 @@ ARRAY METHODS:
 - Returns -1 if it is not present
 - sampleArray.indexOf('derp');   <--- returns index position of 'derp'
 
+.findIndex()
+- return the index of the first element that evaluates to true in
+the callback function
+- How is this different from .indexOf()?
+-
 
 -------------------------
 

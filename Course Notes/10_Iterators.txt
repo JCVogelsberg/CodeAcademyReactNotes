@@ -82,7 +82,7 @@ thereby reducing the array
 Example:
   const array1 = [1,1,1,1,1];
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  console.log(array1.reduce(reducer));   
+  console.log(array1.reduce(reducer));
     // expected output: 10
   console.log(array1.reduce(reducer, 20));
     // expected output: 15
@@ -96,7 +96,9 @@ Example:
     // expected output: BARF!HerpDerpHurrDurr
 
 
+---------------- XxX ----------------
 
+- 
 
 
 

@@ -4,7 +4,8 @@ Day 7  - Arrays
 - Arrays are lists that store data (strings, numbers, other arrays, etc.)
 - Each item inside an array is at an index, starting at 0.
 
-* * * "Whenever order matters an array is usually the best possible data structure to use." * * *
+* * * "Whenever order matters an array is usually the best possible data
+structure to use." * * *
 
 - Access an item: myArray[0]
 - Change an item: myArray[0] = 'new string';
@@ -49,11 +50,12 @@ length of the array
 ---------------- Non-Mutating Array Methods ----------------
 
 .join()
-- creates and returns a new string by concatenating all of the elements in an array
+- creates & returns a new string by concatenating all of the elements in an array
 - Takes a single parameter, which is inserted between elements
 
 .slice()
-- returns elements in a array from start index point to end index point. - Takes two arguments (if only one entered, end point is last element)
+- returns elements in a array from start index point to end index point.
+- Takes two arguments (if only one entered, end point is last element)
 - Just returns items, doesn't remove them
 
 .concat()

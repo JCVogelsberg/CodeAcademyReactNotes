@@ -3,8 +3,10 @@ Day 6  - Functions
 
 Functions
 
-- The "verbs" of programming, functions are the building blocks of all JS programs
-- Reusable blocks of code that group together a sequence of statements to perform a specific task
+- The "verbs" of programming, functions are the building blocks of all JS
+programs
+- Reusable blocks of code that group together a sequence of statements to
+perform a specific task
 - Return statement: captures the result of a function to display
 - Functions are first class objects, they can have properties and methods.
 - Since functions are a type of object, they have properties such as:
@@ -39,7 +41,8 @@ Creating Functions
 
   New in ES6: ARROW FUNCTIONS
 
-  - Remove the need to type out the keyword function every time you need to create a function
+  - Remove the need to type out the keyword function every time you need to
+  create a function
 
     const exampleFunction = () => {
       console.log("I'm an example function.");
@@ -60,7 +63,8 @@ Creating Functions
 
 New in ES6: DEFAULT PARAMETERS
 
-- Allow parameters to have a predetermined value in case there is no argument passed into the function or if the argument is undefined when called.
+- Allow parameters to have a predetermined value in case there is no argument
+passed into the function or if the argument is undefined when called.
 
 Example:
 	function greeting (name = 'stranger') {
@@ -68,3 +72,10 @@ Example:
 	}
 
 * 'stranger' is the default parameter
+
+
+
+
+
+
+.

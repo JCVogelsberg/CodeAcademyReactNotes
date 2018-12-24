@@ -1,0 +1,62 @@
+Day 13 - Conditional Statements
+-------------------------
+
+- A conditional statement checks specific condition(s) and performs a task
+based on the condition(s).
+- Also known as 'flow control'
+- Control flow enables developers to write programs that make decisions
+- Examples: if, else if, else, switch
+
+
+
+---------------- IF/ELSE ----------------
+- The usual
+- How non-boolean data types (strings or numbers) are evaluated:
+
+  let myVariable = 'I Exist!';
+  if (myVariable) {}
+  // myVariable will evaluate to true. Because it has a value, it is 'truthy'
+
+- 'Truthy' values: non-'falsy' values
+
+- 'Falsy' values:
+  * 0
+  * Empty strings: "" or ''
+  * Null which represent when there is no value at all
+  * Undefined which represent when a declared variable lacks a value
+  * NaN (Not a Number)
+
+- Works the same as an if/else statement checking for username, and assigning
+'Stranger' if they don't have one:
+
+  let defaultName = username || 'Stranger';
+
+...because the left condition is evaluated first.
+
+
+---------------- Ternary Operator ----------------
+- Can be used to shorten if/else Statements
+- Ternary operators can be used for conditions which evaluate to true or false.
+
+  let isNightTime = true;
+  if (isNightTime) {
+    console.log('Turn on the lights!');
+  } else {
+    console.log('Turn off the lights!');
+  }
+
+... can be shortened to:
+
+  isNightTime ? console.log('Turn on the lights!') :
+  console.log('Turn off the lights!');
+
+
+- To us comparison operators with ternary operators, put them in parentheses:
+
+  let isGood = 'It's Good!';
+  (isGood === 'It's Good!') ? console.log('GOOD') :
+  console.log('NOT GOOD')
+
+
+
+//.

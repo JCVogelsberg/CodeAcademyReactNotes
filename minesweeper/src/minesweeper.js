@@ -1,4 +1,4 @@
-// Dynamically generate player's board
+// Function to dynamically generate player's board
 const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
   const board = [];
 
@@ -12,8 +12,7 @@ const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
   return board;
 };
 
-
-// Dynamically generate bomb board
+// Function to dynamically generate bomb board
 const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   let board = [];
 
@@ -24,22 +23,66 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
     }
     board.push(row);
   }
-
   let numberOfBombsPlaced = 0;
-
   while (numberOfBombsPlaced < numberOfBombs) {
     // This loop has the potential to place bombs on top of existing bombs
     const randomRowIndex = Math.floor(Math.random() * numberOfRows);
     const randomColumnIndex = Math.floor(Math.random() * numberOfColumns);
 
-    board[randomRowIndex][randomColumnIndex] = 'B';
-    numberOfBombsPlaced++;
+    if (board[randomRowIndex][randomColumnIndex] !== 'B') {
+      board[randomRowIndex][randomColumnIndex] = 'B';
+      numberOfBombsPlaced++;
+    }
   }
-
   return board;
 };
 
-// Print out the game board
+// Function to display adjacent bombs
+const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
+    const neighborOffsets = [
+      [-1,-1],
+      [-1,0],
+      [-1,1],
+      [0,-1],
+      [0,1],
+      [1,-1],
+      [1,0],
+      [1,1]
+    ];
+    const numberOfRows = bombBoard.length;
+    const numberOfColumns = bombBoard[0].length;
+    let numberOfBombs = 0;
+
+    neighborOffsets.forEach(offset => {
+      const neighborRowIndex = rowIndex + offset[0];
+      const neighborColumnIndex = columnIndex + offset[1];
+      if (
+        neighborRowIndex >= 0 &&
+        neighborRowIndex <= numberOfRows &&
+        neighborColumnIndex >= 0 &&
+        neighborColumnIndex <= numberOfColumns
+      ) {
+        if (bombBoard[neighborRowIndex][neighborColumnIndex] === 'B') {
+          numberOfBombs++;
+        }
+      }
+    });
+    return numberOfBombs;
+};
+
+// Function to allow user to flip a tile
+const flipTile = (playerBoard, bombBoard, rowIndex, columnIndex) => {
+    if (playerBoard[rowIndex][columnIndex] !== ' ') {
+      console.log('This tile has already been flipped!');
+      return;
+    } else if (bombBoard[rowIndex][columnIndex] === 'B') {
+      playerBoard[rowIndex][columnIndex] = 'B';
+    } else {
+      playerBoard[rowIndex][columnIndex] = getNumberOfNeighborBombs(bombBoard, rowIndex, columnIndex);
+    }
+};
+
+// Function to print out the game board
 const printBoard = board => {
   console.log(board.map(row => row.join(' | ')).join('\n'));
 };
@@ -53,49 +96,6 @@ console.log('Bomb Board: ');
 printBoard(bombBoard);
 
 
-
-/*
-Questions for the Future:
-
-- How might you improve the generateBombBoard() function so that duplicate
-bombs aren't added to squares that already contain bombs?
-
-- We have a function that generates the player board. How will a player
-actually interact with this board?
-
-- Minesweeper will inform you if there is a bomb adjacent to the square you
-click (if it doesn't contain a bomb itself). How might you implement this
-functionality into the game?
-
-
-
-
-
-
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+flipTile(playerBoard, bombBoard, 0, 1);
+console.log('Updated Player Board: ');
+printBoard(playerBoard);

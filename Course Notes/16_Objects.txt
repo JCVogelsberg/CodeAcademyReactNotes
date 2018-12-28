@@ -1,0 +1,66 @@
+Day 16 - Objects
+-------------------------
+
+- JS objects are containers storing related data and functionality
+-  Many JS components are actually objects under the hood, and even the parts
+that aren't (like strings or numbers) can still act like objects in some instances
+- Six of the seven JS data types are primitive; only objects are complex
+
+
+---------------- Object Literals ----------------
+- Objects can be assigned to variables just like any JS type
+-
+Example:
+  let objectName = {}; // objectName is an empty objects
+
+- Data in a JS object is organized into key-value pairs
+Example:
+  let objectName = {
+    'Fuel Type': 'deuterium',   // <--- in quotes because it has a space
+    color: 'silver',
+    armament: 'photon torpedoes'
+  };
+
+
+---------------- Accessing Properties ----------------
+- There are two ways to access data in an object: dot notation & bracket
+notation
+- Bracket notation must be used to access keys that contain:
+  * numbers
+  * spaces
+  * special characters
+- Bracket notation can also use a variable inside the brackets to
+select the keys of an object
+
+
+Dot notation:
+
+  let spaceship = {
+    homePlanet: 'Earth'
+  };
+  spaceship.homePlanet;    // Returns 'Earth'
+
+
+Bracket Notation:
+
+  let spaceship = {
+    'Fuel Type': 'Turbo Fuel'
+  };
+  spaceship['Active Duty'];   // Returns true
+
+
+---------------- Property Assignment ----------------
+- Objects are 'mutable' = they can be updated after they're created
+- To add new key-value pairs, or change an existing property:
+  * dot notation
+  * bracket notation
+  * ...both using the assignment operator:
+    spaceship.color = 'gold';
+    spaceship[color] = 'gold';
+
+- Deleting properties:
+
+  let spaceship = {
+    'Secret Mission' : 'Discover life outside of Earth.'
+  };
+  delete spaceship['Secret Mission'];

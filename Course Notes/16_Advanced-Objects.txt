@@ -1,0 +1,178 @@
+Day 16 - Advanced Objects
+-------------------------
+
+- 'This' keyword: The 'this' keyword references the 'calling object', which
+provides access to the calling object's properties.
+- You don't always have access to properties inside an object from the object.
+'This' does though!
+- Arrow function syntax DOES NOT work. Arrow functions inherently bind an
+already defined 'this' value to the function itself that is NOT the calling
+object.
+
+TL;DR: Avoid using arrow functions when using 'this' in a method!
+EXAMPLE:
+
+- INCORRECT -
+  const robot = {
+    energyLevel: 100,
+    checkEnergy: () => {
+      console.log(`Energy is currently at ${this.energyLevel}%.`)
+    }
+  }
+
+- CORRECT -
+  const robot = {
+    energyLevel: 100,
+    checkEnergy() {
+      console.log(`Energy is currently at ${this.energyLevel}%.`)
+    }
+  }
+
+
+---------------- Privacy in Objects ----------------
+- JS does not have privacy built-in for objects (some languages do)
+- JS devs follow naming conventions that signal to other devs how to interact
+ w/ a property:
+  * place an underscore before the name of a property to mean that the
+  property should not be altered.
+
+Example:
+  const bankAccount = {
+    _amount: 1000
+  }
+
+* '_amount' is not intended to be directly manipulated (tho it is still
+    possible to reassign '_amount')
+
+
+---------------- Getters Methods ----------------
+- Getters: methods that get & return the internal properties of an object
+- Uses the 'get' keyword followed by a function.
+- Getter methods do not need to be called with a set of parentheses
+
+Example:
+  const thing = {
+    _name: 'derf',
+    _type: 'hurrDurr'
+    get descrip() {     // <----- Getter
+      ...
+    }
+  }
+  person.descrip;
+
+- Advantages of using a getter method:
+  * Getters can perform an action on the data when getting a property.
+  * Getters can return different values using conditionals.
+  * In a getter, we can access the properties of the calling object using 'this'.
+  * The functionality of our code is easier for other devs to understand.
+
+- Getter (and setter) methods properties cannot share the same name as the
+getter/setter function. Or calling the method will result in an infinite call
+stack error!
+
+
+---------------- Setter Methods ----------------
+- Setter Methods: reassign values of existing properties within an object
+- Uses the 'set' keyword followed by a function.
+- Like Getter methods, Setters do not need to be called with a set of
+parentheses
+- Advantages to using setter methods:
+  * checking input
+  * performing actions on properties
+  * displaying a clear intention for how the object is supposed to be used.
+
+Example:
+  const person = {
+    _age: 37,
+    set age(newAge){
+      if (typeof newAge === 'number'){
+        this._age = newAge;
+      } else {
+        console.log('You must assign a number to age');
+      }
+    }
+  };
+  person.age = 40;
+  console.log(person._age); // Logs: 40
+  person.age = '40'; // Logs: You must assign a number to age
+
+
+---------------- Factory Functions ----------------
+- Factory function: a function that returns an object & can be reused to make
+ multiple object instances
+- Have parameters allowing us to customize the object that gets returned.
+- the heart of the function is a 'return' statement
+
+Example:
+  const monsterFactory = (name, age, energySource, catchPhrase) => {
+    return {
+      name: name,
+      age: age,
+      energySource: energySource,
+      scare() {
+        console.log(catchPhrase);
+      }
+    }
+  };
+
+  const frankie = monsterFactory('Frankenstein', 193, 'lightning', 'Fire bad!');
+  const vampire = monsterFactory('Dracula', 723, 'blood', 'Bleah bluh-bleah!');
+
+
+---------------- Property Value Shorthand ----------------
+- Property value shorthand: a destructuring technique, don't have to assign a
+key/value pair that are the same
+
+- BEFORE -
+  const monsterFactory = (name, age) => {
+    return {
+      name: name,
+      age: age
+    }
+  };
+
+- AFTER -
+  const monsterFactory = (name, age) => {
+    return {
+      name,
+      age
+    }
+  };
+
+
+---------------- Destructured Assignment ----------------
+- Extract key-value pairs from objects and save them as properties
+
+Example:
+  const vampire = {
+    name: 'Dracula',
+    residence: 'Transylvania',
+    preferences: {
+      day: 'stay inside',
+      night: 'satisfy appetite'
+    }
+  };
+
+- BEFORE -
+  const residence = vampire.residence;
+  console.log(residence); // Prints 'Transylvania'
+
+
+- AFTER -
+  const { residence } = vampire;
+  console.log(residence); // Prints 'Transylvania'
+
+Using destructured assignment to grab nested properties of an object:
+  const { day } = vampire.preferences;
+  console.log(day); // Prints 'stay inside'
+
+
+---------------- Built-in Object Methods ----------------
+- ...
+
+
+
+
+
+
+//.

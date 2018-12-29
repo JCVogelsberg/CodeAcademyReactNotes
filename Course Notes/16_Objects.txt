@@ -8,8 +8,10 @@ that aren't (like strings or numbers) can still act like objects in some instanc
 
 
 ---------------- Object Literals ----------------
+- An object literal is composed of comma-separated key-value pairs surrounded
+by curly braces.
 - Objects can be assigned to variables just like any JS type
--
+
 Example:
   let objectName = {}; // objectName is an empty objects
 
@@ -34,7 +36,6 @@ select the keys of an object
 
 
 Dot notation:
-
   let spaceship = {
     homePlanet: 'Earth'
   };
@@ -42,7 +43,6 @@ Dot notation:
 
 
 Bracket Notation:
-
   let spaceship = {
     'Fuel Type': 'Turbo Fuel'
   };
@@ -64,3 +64,100 @@ Bracket Notation:
     'Secret Mission' : 'Discover life outside of Earth.'
   };
   delete spaceship['Secret Mission'];
+
+
+---------------- Methods ----------------
+- A function that is in an object = METHOD
+- Examples:
+
+  'console.log();'
+      console --->  a global javascript object
+      .log ------>  a method on 'console'
+
+  'Math.floor();'
+      Math ------>  a global javascript object
+      .floor ---->  a method on 'Math'
+
+- Two ways of declaring functions in an object:
+
+  let alienMsg = {
+    retreat() {
+      console.log('Take me to your leader!');
+    }
+  };
+
+  let alienMsg = {
+    retreat: function () {
+      console.log('Take me to your leader!');
+    }
+  };
+
+
+---------------- Nesting Objects ----------------
+- An object might have another object as a property which in turn could have a
+property that's an array of even more objects!
+-
+
+Example:
+
+  const spaceship = {
+    engine: {
+      yearBuilt: 2018,
+      fuel: 'deuterium'
+    },
+
+    crew: {
+      captain: 'Doug',
+      boatswain: 'Eowyn',
+      purser: 'Steve-O'
+    }
+  };
+  spaceship.engine['yearBuilt']; // Returns 2018
+
+
+---------------- Pass by Reference ----------------
+- Passed by Reference: When we pass a variable assigned to an object into a
+function as an argument, the computer interprets the parameter name as pointing
+to the space in memory holding that object.
+
+- Result: functions which change object properties actually mutate the object
+permanently (even when the object is assigned to a const variable).
+
+- Takes an object as a parameter (see below)
+
+Example:
+  const myDog = {
+    color : 'brindle'
+  };
+
+  let paintIt = obj => {
+    obj.color = 'earwax yellow'
+  };
+
+  paintIt(myDog);
+  console.log(myDog.color); // Returns 'earwax yellow'
+
+
+---------------- Looping Through Objects ----------------
+- Key-value pairs in objects aren't ordered, so you have to use 'for...in'
+syntax to loop through them
+- 'For...in' will execute a given block of code for each property in an object.
+
+Example:
+  for ( let argUment in spaceship.crew ) {
+  	console.log(
+      `${argUment}: ${spaceship.crew[argUment].name}`
+    )
+  }
+
+  for (let param in outerObject.innerObject) {
+    console.log(
+      `${outerObject.innerObject[param].propertyName}:
+       ${outerObject.innerObject[param].differentPropertyName}`
+    )
+  };
+
+
+
+
+//.

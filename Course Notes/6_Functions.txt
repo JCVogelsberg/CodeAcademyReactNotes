@@ -18,21 +18,18 @@ perform a specific task
 
 Creating Functions
 - Function Declaration:
-
   function exampleFunction(param) {
     console.log("I'm an example function.");
   }
 
 
 - Function Expression:
-
   const exampleFunction = function(param) {
     console.log("I'm an example function.");
   }
 
 
 - Arrow Function Syntax
-
   const exampleFunction = param => {
     console.log("I'm an example function.");
   }

@@ -1,0 +1,11 @@
+Try debugging it:
+
+> i. To step through code add `debugger` 1 line above where you want start stepping through it.
+
+> ii. Right click and Inspect to open up your Developer Tools. Go to the Sources tab and in the repl.it, run the program.
+
+> iii. You will see a line highlighted where you wrote debugger in the Source tab. From here you can start stepping through your code step by step.
+
+> iv. Keyboard shortcut is F10 to go to the next line. F11 to step into a function call and debug that function line by line.
+
+> v. Your variables will appear in the right hand side window under Scope or Global depending on where in your code you are. You will also see the values appear in the main window after you step through it (aka when that line of code is not highlighted and you are on the next line).

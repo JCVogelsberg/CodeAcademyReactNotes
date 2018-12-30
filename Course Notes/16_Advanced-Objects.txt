@@ -58,7 +58,7 @@ Example:
       ...
     }
   }
-  person.descrip;
+  person.descrip; 
 
 - Advantages of using a getter method:
   * Getters can perform an action on the data when getting a property.

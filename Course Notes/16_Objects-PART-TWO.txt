@@ -58,7 +58,7 @@ Example:
       ...
     }
   }
-  person.descrip; 
+  person.descrip;
 
 - Advantages of using a getter method:
   * Getters can perform an action on the data when getting a property.
@@ -168,7 +168,12 @@ Using destructured assignment to grab nested properties of an object:
 
 
 ---------------- Built-in Object Methods ----------------
-- ...
+- Some examples:
+
+Object.entries() - returns an array of an object's property KEY/VALUE PAIRS
+Object.keys() - returns an array of an object's property NAMES
+Object.assign() - copies the property VALUES of an object
+
 
 
 

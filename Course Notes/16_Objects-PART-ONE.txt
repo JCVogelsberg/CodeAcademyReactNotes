@@ -67,7 +67,7 @@ Bracket Notation:
 
 
 ---------------- Methods ----------------
-- A function that is in an object = METHOD
+- Method: A property with a function as its value.
 - Examples:
 
   'console.log();'
@@ -144,9 +144,9 @@ syntax to loop through them
 - 'For...in' will execute a given block of code for each property in an object.
 
 Example:
-  for ( let argUment in spaceship.crew ) {
+  for ( let param in spaceship.crew ) {
   	console.log(
-      `${argUment}: ${spaceship.crew[argUment].name}`
+      `${param}: ${spaceship.crew[param].name}`
     )
   }
 

@@ -1,0 +1,125 @@
+Day 17 - Classes
+-------------------------
+- Classes are a tool that developers use to quickly produce similar objects.
+- Always capitalize/CamelCase class names
+- An instance is an object that contains the property names and methods of a class, but with unique property values.
+
+Example:
+
+  class Car {
+    constructor(make,model) {
+      this.make = make;
+      this.model = model;
+    }
+  }
+
+  // Toyota Supra Instance
+  const toySup = new Car('Toyota','Supra');
+  console.log(toySup.make);   // returns 'Toyota'
+  console.log(toySup.model);   // returns 'Supra'
+
+  // Ford Ranger Instance
+  const bigTurd = new Car('Ford','Ranger');
+  console.log(bigTurd.make);   // returns 'Ford'
+  console.log(bigTurd.model);   // returns 'Ranger'
+
+
+---------------- The Constructor Method ----------------
+- The constructor() is called when you create a new instance of a class. It sets the property values for each instance.
+- The main difference in syntax between objects and Classes
+- JS calls the constructor() method every time it creates a new instance of a class
+
+Example:
+  class Dog {
+    constructor(name) {   // <----- the constructor
+      this._name = name;
+      this._behavior = 0;
+    }
+  }
+
+
+---------------- Class Methods ----------------
+- Properties prepended with underscores
+- DO NOT add commas between methods!
+
+Example:
+  class Car {
+    constructor(make,model) {
+      this._make = make;
+      this._model = model;
+    }                       // <------- NO COMMA
+
+    get make() {
+      return this._make;
+    }                       // <------- NO COMMA
+
+    get model() {
+      return this._model;
+    }
+  }
+
+
+---------------- Inheritance ----------------
+- When multiple classes share properties or methods, they become candidates for inheritance
+- Inheritance: Creating a parent class (aka superclass) w/ properties & methods that multiple child classes (aka subclasses) share
+- The subclass inherits all of the parent's getters, setters, and methods. You can also use the super keyword to set properties in the parent class.
+- The only input parameters will be that which is DIFFERENT in every instances
+
+Example:
+  // Parent class (superclass)
+  class Animal {
+    constructor(name) {
+      this._name = name;
+      this._behavior = 0;
+    }
+    get name() { return this._name; }
+    get behavior() { return this._behavior; }
+    incrementBehavior() { this._behavior++; }
+  }
+
+  // Child class (subclass)
+  class Cat extends Animal {         // 'extends' ties it to the parent class
+    constructor(name, usesLitter) {
+      super(name);                   // pulls name from parent class
+      this._usesLitter = usesLitter; // adds properties parent doesn't have
+    }
+  }
+
+- Child classes inherits the properties, getters, and methods from the parent class.
+- Extend the shared properties & methods in the parent class to the subclass
+- Creates a new child class that extends the parent class
+- 'Extends' keyword: makes the methods of the parent class available inside the child class
+- 'Super' keyword:
+  * Used in subclasses to call a parent constructor
+  * The 'super' keyword must be called before 'this' is used (or error)
+- The constructor accepts arguments for the things that are DIFFERENT from parent (either unique to instances, like 'name', or properties the parent doesn't have)
+
+* * * Getters & Methods set up in the Parent class are inherited by the child classes! * * *
+
+---------------- Static Methods ----------------
+- Methods in a class that aren't available to individual instances
+- You can call it directly from the class, but not from an instance of the class
+
+Example:
+  class className {
+    constructor(derf) {
+      ...
+    }
+
+    static staticMethod() {
+      ...
+    }
+  }
+
+- Because of the 'static' keyword, you can only access .staticMethod() by appending it to the class
+
+
+Won't work with an Instance:
+  const instanceExample = new className('derf');
+  instanceExample.staticMethod();      // TypeError
+
+
+
+
+
+//.

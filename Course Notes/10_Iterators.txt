@@ -8,7 +8,6 @@ or just ITERATORS.
 
 
 ---------------- .forEach() ----------------
-
 - executes a provided function once for each array element
 
 Example:
@@ -27,7 +26,6 @@ Example:
 
 
 ---------------- .map()  ----------------
-
 - creates a new array with the results of calling a provided function on
 every element in the calling array.
 
@@ -43,7 +41,6 @@ Example:
 
 
 ---------------- .filter() ----------------
-
 - creates a new array with all elements that pass the test implemented by the
 provided function.
 
@@ -59,7 +56,6 @@ Example:
 
 
 ---------------- .findIndex() ----------------
-
 .findIndex()
 - return the index of the first element that evaluates to true in
 the callback function
@@ -75,7 +71,6 @@ Example:
 
 
 ---------------- .reduce() ----------------
-
 - returns a single value after iterating through the elements of an array,
 thereby reducing the array
 

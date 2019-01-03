@@ -1,0 +1,132 @@
+Day 19 - Modules
+-------------------------
+
+- Modules: reusable pieces of code that can be exported from one program and imported for use in another program.
+
+- Separating code with similar logic into files called modules, we can:
+  * Find, fix, & debug code more easily;
+  * Reuse & recycle defined logic in different parts of our application;
+  * Keep information private & protected from other modules;
+  * Prevent pollution of the global namespace & potential naming collisions, by cautiously selecting variables and behavior we load into a program.
+
+
+How to do it:
+  - Define an object to represent the module.
+  - Add data or behavior to the module.
+  - Export the module.
+
+
+Example:
+  let Menu = {};  // Define an object to represent the module
+  Menu.specialty = "Cheeseburger";  // Add data or behavior to the module.
+
+  module.exports = Menu;   // Export the module
+
+
+---------------- Require() ----------------
+- Require(): JS function that enables a module to load by passing in the module's filepath as a parameter.
+- Require() imports the module for use in the current program.
+
+
+How we do it:
+  - Import the module
+  - Use the module and its properties within a program.
+
+
+Example:
+  const Menu = require('./menu.js');
+
+  function placeOrder() {
+    console.log('My order is: ' + Menu.specialty);
+  }
+
+  placeOrder();
+
+
+---------------- Module.exports ----------------
+- You can wrap any collection of data and functions in an object, and export the object using module.exports
+- Module.exports exports the module for use in another program.
+
+Example:
+  let Menu = {};
+
+  module.exports = {
+    specialty: "Roasted Beet Burger with Mint Sauce",
+    getSpecialty: function() {
+      return this.specialty;
+    }
+  };
+
+  - module.exports exposes the current module as an object.
+  - 'specialty' and 'getSpecialty' are properties on the object.
+
+
+---------------- Default Export ----------------
+- Default Export:
+  * Works similarly to the module.exports syntax
+  * In ES6, we use 'export default' in place of 'module.exports'
+
+  Example:
+    let Menu = {};
+    export default Menu;  // exports objects, functions, & primitive data types
+
+
+---------------- Import ----------------
+- ES6 keyword for importing objects
+
+Example:
+  import Menu from './menu';
+
+
+---------------- Named Exports ----------------
+- Named Exports: allow us to export data through the use of variables.
+- You don't set the properties on an object. Each export is stored in its own variable.
+
+Example:
+  let specialty = '';
+  function isVegetarian() {...};
+  function isLowSodium() {...};
+
+  export { specialty, isVegetarian };
+
+
+- Named exports can be exported as soon as they are declared, by placing the keyword export in front of variable declarations:
+
+  export let specialty = '';
+  export function isVegetarian() {...};
+
+- This eliminates the need for the export statement at the bottom of the file (but do you want it anyway, as a n easy quick-reference exported objects?)
+- Exporting upon declaration does not have an impact on how we import the variables.
+
+
+---------------- Export As ----------------
+- Easy way to change the name of variables when you export or import them
+- Uses the export statement
+- Uses the 'as' keyword
+
+Example:
+  let specialty = '';
+  let isVegetarian = function() {...};
+  let isLowSodium = function() {...};
+  export { specialty as chefsSpecial, isVegetarian as isVeg, isLowSodium };
+
+- Import statement stays the same, just with the aliases instead of the original names
+- Import statementcan also be used to assign aliases:
+  import { chefsSpecial, isVeg, isLowSodium as assignAlias };
+
+- Another way of using aliases is to import the entire module as an alias:
+  import * as Carte from './menu';
+
+  Carte.chefsSpecial;
+  Carte.isVeg();
+  Carte.isLowSodium();
+
+
+---------------- Combining Export/Import Statements ----------------
+- You can also use named exports and default exports together:
+  export { specialty as chefsSpecial };
+  export default isGlutenFree;
+
+- Same goes with Import statements:
+  import { specialty, isVegetarian, isLowSodium } from './menu';
+  import GlutenFree from './menu';

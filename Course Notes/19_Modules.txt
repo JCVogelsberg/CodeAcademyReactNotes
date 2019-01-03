@@ -89,7 +89,7 @@ Example:
 
   export { specialty, isVegetarian };
 
-
+ 
 - Named exports can be exported as soon as they are declared, by placing the keyword export in front of variable declarations:
 
   export let specialty = '';

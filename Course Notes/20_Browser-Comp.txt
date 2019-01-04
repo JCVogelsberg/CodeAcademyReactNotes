@@ -1,0 +1,160 @@
+Day 20 - Browser Compatibility
+-------------------------
+- You know the drill; basically IE sucks
+- Issues:
+  * Some users have not updated to the latest, ES6 supported web browser version.
+  * A few ES6 features, like modules, are still not supported by most web browsers.
+
+- Resources:
+  * CanIUse.com - we know this one!
+  * Babel - what you needed to make your local import/export experiments work with Node.js!
+
+
+---------------- ES6 Update ----------------
+- ES6 is syntactically more similar to other OOP languages
+- Less friction when experienced, non-JS devs want to learn JS
+- Readability and economy of code:
+  * The new syntax is often easier to understand (more readable)
+  * Requires fewer characters to create the same functionality (economy of code).
+- Some ES5 syntax led to common bugs. With ES6, Ecma introduced syntax that mitigates some of the most common pitfalls.
+- Ecma knew that adoption by web developers would occur quickly, while web browser support lagged behind.
+- To limit the impact of ES6 browser compatibility issues, Ecma made the new syntax backwards compatible, which means you can map JavaScript ES6 code to ES5
+
+
+---------------- Variables (var, let, & const) ----------------
+- 'let' and 'const' keywords were introduced in ES6
+- Before that, we declared all variables with the 'var' keyword
+
+- ES6 string interpolation:
+  `My name is ${name}, from ${city}.`
+
+- ES5 concatenation:
+  'My name is ' + name + ', from ' + city + '.'
+
+
+---------------- Transpilation With Babel ----------------
+- Transpilation: the process of converting one prog. language to another
+- Babel:
+  * A JS library that transpiles ES6 to ES5
+  * Possible because ES6 is predictably backwards compatible
+- Install:
+  npm install babel-cli
+  npm install babel-preset-env
+  npm run build
+
+- To transpile code when you run 'npm run build':
+  * place your ES6 JavaScript file in a directory called 'src'
+  * From your root directory, the path to the ES6 file is './src/main.js'
+
+  File structure:
+    project
+    |_ src
+    |___ main.js
+
+
+---------------- Node Package Manager ----------------
+- Before installing Babel, setup project to use the node package manager (npm)
+- npm: used to access & manage Node packages
+- Node packages: directories that contain JS code written by other developers
+- Use these packages to reduce duplication of work & avoid bugs
+
+- run 'npm init': creates a package.json file in the root directory, which contains info about the current JS project
+
+  Your directory structure:
+    project
+    |_ src
+    |___ main.js
+    |_ package.json
+
+
+---------------- Install Node Packages ----------------
+- Use the npm install command to install new Node packages locally
+- The install command creates a folder called node_modules and copies the package files to it
+- The install command also installs all of the dependencies for the given package
+
+- To install Babel:
+  $ npm install babel-cli -D
+  $ npm install babel-preset-env -D
+
+- 'babel-cli' package: includes command line Babel tools
+- 'babel-preset-env' package: has the code that maps any JS feature, ES6+ to ES5
+- The '-D' flag instructs npm to add each package to a property called 'devDependencies' in package.json
+- Dependencies:
+  * Once dependencies are listed in 'devDependencies', other developers can run your project without installing each package separately
+  * Instead, they can simply run 'npm install' which tells npm to look inside package.json & download all of the packages listed in 'devDependencies'
+- You can find the Babel packages and all their dependencies in the node_modules folder:
+
+  project
+  |_ node_modules
+  |___ .bin
+  |___ ...
+  |_ src
+  |___ main.js
+  |_ package.json
+
+
+---------------- .babelrc ----------------
+- After downloading the Babel packages, you need to specify the version of source JS code
+- Specify the initial JavaScript version inside of a file named .babelrc
+  * run touch .babelrc to create this file
+- Inside '.babelrc' you need to define the preset for your source JS file
+- The preset specifies the version of your initial JS file
+- To specify that we are transpiling code from an ES6+ source, we have to add the following JS object to .babelrc:
+
+    {
+      "presets": ["env"]
+    }
+    // instructs Babel to transpile any code from versions ES6 and later.
+
+
+---------------- Babel Source Lib ----------------
+- Yu must specify a script in 'package.json' that initiates the ES6+ to ES5 transpilation
+- Inside of the 'package.json' file, there is a property named 'scripts':
+
+    ...
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    }, ...
+
+- 'scripts' holds an object for specifying command line shortcuts
+- Below the "test" property, we will add a script that runs Babel like this:
+
+    ...
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+-->   "build": "babel src -d lib"
+    }
+
+- The property's value, "babel src -d lib", is a command line method that transpiles ES6+ code to ES5:
+  * babel — The Babel command call responsible for transpiling code.
+  * src — Instructs Babel to transpile all JavaScript code inside the src directory.
+  * -d — Instructs Babel to write the transpiled code to a directory.
+  * lib — Babel writes the transpiled code to a directory called lib.
+
+- Now, we need to call 'build' from the command line to transpile and write ES5 code to a directory called lib:
+
+    npm run build
+
+- Babel writes the ES5 code to a file named main.js (it's always the same name as the original file) inside of a folder called lib.
+- The resulting directory structure is:
+
+    project
+    |_ lib
+    |___ main.js
+    |_ node_modules
+    |___ .bin
+    |___ ...
+    |_ src
+    |___ main.js
+    |_ .babelrc
+    |_ package.json
+
+-
+
+
+
+
+
+
+
+//.

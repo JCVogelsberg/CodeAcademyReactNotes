@@ -37,13 +37,9 @@ Day 20 - Browser Compatibility
 - Babel:
   * A JS library that transpiles ES6 to ES5
   * Possible because ES6 is predictably backwards compatible
-- Install:
-  npm install babel-cli
-  npm install babel-preset-env
-  npm run build
 
 - To transpile code when you run 'npm run build':
-  * place your ES6 JavaScript file in a directory called 'src'
+  * Place your ES6 JavaScript file in a directory called 'src'
   * From your root directory, the path to the ES6 file is './src/main.js'
 
   File structure:
@@ -58,7 +54,13 @@ Day 20 - Browser Compatibility
 - Node packages: directories that contain JS code written by other developers
 - Use these packages to reduce duplication of work & avoid bugs
 
-- run 'npm init': creates a package.json file in the root directory, which contains info about the current JS project
+- run 'npm init': creates a package.json file in the root directory
+- XXX contains info about the current JS project:
+  * Metadata (title, description, authors)
+  * Package dependencies
+  * Key-value pairs for command line scripts
+  * Scripts
+
 
   Your directory structure:
     project

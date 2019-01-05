@@ -23,3 +23,13 @@ Add the following script to your scripts object in package.json:
 
 5)
 Run 'npm run build' whenever you want to transpile your code from your src to lib directories.
+
+
+===== + ===== + ===== + ===== + ===== + ===== + ===== + ===== 
+
+
+- src folder: where the original ES6+ code lives
+
+- lib folder: where the ES5 compatible code is transpilated to
+
+- package.json file: ???

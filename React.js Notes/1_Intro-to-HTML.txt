@@ -1,0 +1,35 @@
+Day 1 - Intro to HTML
+-------------------------
+- 'HyperText Markup Language'
+- Defines the structure and presentation of raw text.
+- The computer interprets raw text that is wrapped in HTML elements.
+- Body Tag: only content inside the opening and closing body tags can be displayed to the screen.
+
+- Parent/Child Elements:
+  * When an element is contained inside another element, it is considered the child of that element.
+  * The child element is said to be nested inside of the parent element.
+  * The <p> element is considered a child of the <body> element
+
+- Div
+  * Short for 'division'
+  * Block element
+
+- Attributes
+  * 'id', 'class'
+  * content added to the opening tag of an element
+  * can be used in several different ways, from providing information to changing styling
+
+- P tags
+  * Paragraphs (<p>) contain a block of plain text
+  * block element
+
+- Span tags
+  * contains short pieces of text or other HTML.
+  * Inline element
+
+- <em> & <strong>
+  * italics and bold text, respectively
+  * inline Elements
+  * Don't use <em>; use CSS instead
+
+-

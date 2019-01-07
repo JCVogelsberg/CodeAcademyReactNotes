@@ -1,0 +1,36 @@
+Day 3 - Intro to JSX
+-------------------------
+- JSX is a syntax extension for JavaScript, designed to be used with React.
+- Syntax extension: compiled by a JSX compiler into regular JavaScript
+
+Example:
+
+  const h1 = <h1>Hello world</h1>;
+
+- The H1 above is a JSX element
+- JSX elements look a lot like HTML
+- The only noticeable difference is that you find them in JS files instead of HTML files
+- JSX elements are treated as JavaScript expressions:
+  * can be saved in a variable
+  * passed to a function
+  * stored in an object or array
+
+Example:
+  // JSX element saved in a variable
+  const navBar = <nav>I am a nav bar</nav>;
+
+  // Several JSX elements being stored in an object:
+  const myTruck = {
+    engine: <li>2UZ-FE</li>,
+    transmission: <li>A340</li>,
+    rearDiff: <li>8-inch LSD</li>
+  };
+
+- JSX elements can have attributes, just like HTML elements can.
+- 
+
+
+
+
+
+---------------- XxX ----------------

@@ -1,0 +1,23 @@
+Day 1 - HTML Documentation
+-------------------------
+
+- Set up an HTML document:
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Brown Bears</title>  <!-- appears in tab -->
+  </head>
+  <div id="section-1">
+    <p>Welcome to Section 1</p>
+  </div>
+
+  <div id="section-2">
+    <p>Welcome to Section 2</p>
+  </div>
+
+  <div id="section-3">
+    <p>Welcome to Section 3</p>
+  </div>
+</html>

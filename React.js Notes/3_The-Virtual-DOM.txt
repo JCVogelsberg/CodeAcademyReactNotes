@@ -1,0 +1,35 @@
+Day 3 - "The Virtual DOM"
+-------------------------
+- DOM manipulation is the heart of the modern, interactive web. 
+- Unfortunately, it is also a lot slower than most JS operations.
+- Also, most JS frameworks update the DOM much more than they have to
+
+Example:
+  + You have a list w/ 10 items
+  + Check off 1 item
+  + Most JS frameworks would rebuild the entire list
+  + That's 10x more work than necessary
+
+- To address this unnecessary work, React uses the Virtual DOM 
+
+
+---------------- The Virtual DOM ----------------
+- In React, for every DOM object, there is a 'virtual DOM object'
+- A virtual DOM object is a lightweight copy
+- Think of manipulating the virtual DOM as editing a blueprint, as opposed to moving rooms in an actual house.
+- When you render a JSX element, every single virtual DOM object gets updated, then React compares the virtual DOM with a virtual DOM snapshot taken before.
+- React figures out exactly which virtual DOM objects have changed. This process is called 'diffing'
+
+(Diffing sounds like video compression, where only what's different in a scene gets changed)
+
+- Once React knows which virtual DOM objects have changed, then React updates ONLY those objects on the real DOM. 
+
+
+---------------- Basic Summary ----------------
+1)   The entire virtual DOM gets updated.
+2)   The virtual DOM gets compared to what it looked like before you updated it. React figures out which objects have changed.
+3)   The changed objects, and the changed objects only, get updated on the real DOM.
+4)   Changes on the real DOM cause the screen to change.
+
+
+

@@ -1,7 +1,7 @@
 Day 3 - Intro to JSX
 -------------------------
 - JSX is a syntax extension for JavaScript, designed to be used with React.
-- Syntax extension: compiled by a JSX compiler into regular JavaScript
+- Syntax extension: must be compiled by a JSX compiler into regular JavaScript before it reaches the browser
 
 Example:
 
@@ -10,6 +10,10 @@ Example:
 - The H1 above is a JSX element
 - JSX elements look a lot like HTML
 - The only noticeable difference is that you find them in JS files instead of HTML files
+
+
+---------------- Writing JSX ----------------
+
 - JSX elements are treated as JavaScript expressions:
   * can be saved in a variable
   * passed to a function
@@ -22,15 +26,64 @@ Example:
   // Several JSX elements being stored in an object:
   const myTruck = {
     engine: <li>2UZ-FE</li>,
+    engineSize: <li>4.7L</li>,
     transmission: <li>A340</li>,
     rearDiff: <li>8-inch LSD</li>
   };
 
 - JSX elements can have attributes, just like HTML elements can.
-- 
+- A JSX expression must have exactly one outermost element:
+  * The first opening tag and the final closing tag of a JSX expression must belong to the same JSX element!
+  * 
+
+Example:
+  const derf = (
+    <div>          // Opening tag
+      <p>...</p>
+    </div>         // Closing tag
+  );
+
+
+---------------- Rendering JSX ----------------
+
+- Render: to make a JSX expression appear onscreen
+- LPT: JS is case-sensitve!
+
+ Example:
+  ReactDOM.render(
+    <h1>Hello world</h1>, 
+    document.getElementById('app')
+  );
+
+--- Breakdown of Above Code ---
+
+  ReactDOM: 
+    * calls a JS library of methods that handle the DOM
+
+  .render: 
+    * ReactDOM method
+    * most common way to to render JSX
+    * creates a corresponding tree of DOM nodes, adds that tree to the DOM
+   
+  <h1>Hello world</h1>:
+    * the first argument being passed to ReactDOM.render()
+    * Should evaluate to a JSX expression
+    * will be rendered to the screen
+    * Could also be a variable
+
+  document.getElementById('app'):
+    * The first argument is appended to whatever element is selected by the second argument
+    * 'app' is the ID of an element in the index.html file.
+    * '<h1>Hello world</h1>' will be placed in side div#app
+
+
+- ReactDOM only updates DOM elements that have changed, so if you render the same thing twice, the 2nd render will do nothing.
+
+- Only updating the necessary DOM elements is a large part of what makes React so successful!
 
 
 
 
 
----------------- XxX ----------------
+
+

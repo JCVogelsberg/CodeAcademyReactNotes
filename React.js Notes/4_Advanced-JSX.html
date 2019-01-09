@@ -1,0 +1,190 @@
+Day 4 - Advanced JSX
+-------------------------
+- Grammar in JSX is mostly the same as in HTML, but some subtle differences
+- The most frequent of these: the word 'class'
+
+
+---------------- class vs. className ----------------
+- In HTML, the 'class' attribute is common
+- But in JS, 'class' is a reserved word.
+- So the 'class' attribute becomes 'className'
+
+Example:
+  In HTML:
+  <h1 class="big">Hey</h1>
+
+  In JSX:
+  <h1 className="big">Hey</h1>
+
+- When JSX is rendered, JSX 'className' attributes are rendered as 'class' attributes
+
+
+---------------- Self-Closing Tags ----------------
+- Most HTML elements use an opening tag and a closing tag (<div></div>)
+- Some HTML tags are self-closing
+- Note that in HTML, self-closing tags' slash at the end is optional...
+- In JSX, it is MANDATORY.
+
+Example:
+  In HTML:
+  <img />  OR  <img>   // Okay
+  <br />   OR  <br>    // Fine
+
+  In JSX:
+  <img>     // NO!
+  <br>      // Bad monkey!
+
+
+---------------- JS in JSX in JS ----------------
+- Regular JS, written inside of a JSX expression, in a JS file
+- Wrapping things in curly braces: even though it's located in between JSX tags, treat it like ordinary JS and not JSX
+- You can access variables while inside of a JSX expression, even if those variables were declared on the outside.
+
+
+
+---------------- Variable Attributes in JSX ----------------
+- In JSX, it's common to use variables to set attributes.
+
+Example:
+  const sideLength = "200px";
+
+
+- Object properties are also often used to set attributes.
+
+Example:
+  const panda = (
+    <img 
+      src="images/panda.jpg"    // image source
+      alt="panda"               // alt tag
+      height={sideLength}       // variable (note curly braces)
+      width={sideLength} />     // variable (note curly braces)
+  );  
+
+
+- You can save things and call them as needed.
+
+Example:
+  const pics = {
+    truck: "truck.gif",
+    airplane: "airplane.png",
+    toaster: "toaster.jpg"
+  }; 
+
+  const truck = (
+    <img 
+      src={pics.truck} />
+  );
+
+
+---------------- JSX Elements Event Listeners ----------------
+- JSX elements can have event listeners. 
+- Programming in React means constantly working with event listeners.
+- You create an event listener by giving a JSX element a special attribute. 
+
+Example:
+  <img onClick={myFunc} />
+
+- List of valid event names:
+  https://reactjs.org/docs/events.html#supported-events
+
+
+
+---------------- If Statements Don't Work ----------------
+- You can not inject an if statement into a JSX expression.
+- Instead:
+  * Write an if statement, but DON'T put it between JSX tags
+  * The ternary Operators
+  * The && operator
+
+
+--- Ternary Operators ---
+- JS operator that takes three operands.
+- Frequently used as a shortcut for the 'if' statement.
+- Occurs in React surprisingly often (as an 'if' statement stand-in).
+
+Example:
+  function getFee(conditionIsTrue) {
+    return (conditionIsTrue ? "it's true" : "it's false");
+  }
+  console.log(getFee(true)); // expected output: "it's true"
+
+
+--- The && Operator ---
+- && works best in conditionals that will:
+  * sometimes do an action
+  * but other times do nothing at all
+
+Example:
+  const tasty = (
+    <ul>
+      { !allergic && <li>shellfish</li> }   // 'shellfish' only render if 'allergic' falsy
+    </ul>
+  );
+
+
+---------------- .map in JSX ----------------
+- The array method .map() comes up often in React
+- Get in the habit of using it alongside JSX
+
+Example:
+  const strings = ['Home', 'Shop', 'About Me'];   
+  // Array fulla stuff
+
+  const listItems = strings.map(string => <li>{string}</li>); 
+  // Goes thru the strings array, displays array elements in <li> tags
+
+  <ul>{listItems}</ul>
+  // wraps <ul> tags around <li> tags
+
+
+  // BOTH FINE
+-  
+  <ul>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+  </ul>
+
+-
+  const liArray = [
+    <li>item 1</li>, 
+    <li>item 2<li>, 
+    <li>item 3</li>
+  ];
+  <ul>{liArray}</ul>
+
+
+---------------- Keys ----------------
+- A key is a JSX attribute.
+- React uses them internally to keep track of lists. 
+- Without keys, React might scramble your list-items' order.
+- A list needs keys if either of the following are true:
+
+  * The list-items have memory from one render to the next. For instance, when a to-do list renders, each item must "remember" whether it was checked off. The items shouldn't get amnesia when they render.
+
+  * A list's order might be shuffled. For instance, a list of search results might be shuffled from one render to the next.
+
+  ( If you aren't sure then it never hurts to use them! )
+
+Example:
+  const peopleLis = people.map((person, i) =>
+    <li key={"person_" + i}>{person}</li>  // will render 'person_1', 'person_2', etc.
+  );
+
+
+---------------- React.createElement ----------------
+- Write React without JSX (tho most devs use it)
+
+Example:
+  const h1 = <h1>Hello world</h1>;
+
+  * can be rewritten without JSX, like this: *
+
+  const h1 = React.createElement(
+    "h1",
+    null,
+    "Hello, world"
+  ); 
+
+
+

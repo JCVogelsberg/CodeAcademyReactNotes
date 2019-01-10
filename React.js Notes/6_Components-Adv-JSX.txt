@@ -1,0 +1,81 @@
+Day 6 - Components & Advanced JSX
+-------------------------
+
+---------------- Multiline JSX in a Component ----------------
+- In a component class, surround multi-line JSX code with parentheses after the return statement:
+
+Example:
+  class HerpDerp extends React.Component {
+    render() {
+      return (                              <----
+        <p>Things! Things and stuff!</p>
+      );                                    <----
+    }
+  };
+
+
+---------------- Put Logic in a Render Function ----------------
+- Inside render function, but before return: good place for other things needed in the component (logic, calculations, variable declarations, etc.)
+
+Example:
+  class HerpDerp extends React.Component {
+    render() {
+      const der = Math.floor(Math.random() * 10 + 1);
+      return (
+        <p>Things! Things and stuff!</p>
+      );
+    }
+  };
+
+
+---------------- Use a Conditional in a Render Function ----------------
+
+  class TodaysPlan extends React.Component {
+    render() {
+      let task;
+      if (!apocalypse) {
+        task = 'learn React.js'
+      } else {
+        task = 'run around'
+      }
+      return <h1>Today I am going to {task}!</h1>;
+    }
+  }
+
+
+---------------- 'This' in a Component ----------------
+- The word this gets used in React a lot
+- This will refer to an instance of your component class
+- Very likely inside the body of a component class declaration.
+
+Example:
+  class IceCreamGuy extends React.Component {
+    get food() {
+      return 'ice cream';
+    }
+
+    render() {
+      return <h1>I like {this.food}.</h1>;    <---
+    }
+  }
+
+---------------- Using 'This' for Event Listeners ----------------
+class Button extends React.Component {
+  scream() {
+    alert('Don't push that.');
+  }
+
+  render() {
+    return <button onClick={this.scream}>Click Here</button>;
+  }
+}
+
+
+
+
+
+
+
+
+
+//.

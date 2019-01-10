@@ -53,12 +53,12 @@ Example:
 
 Example:
   const panda = (
-    <img 
+    <img
       src="images/panda.jpg"    // image source
       alt="panda"               // alt tag
       height={sideLength}       // variable (note curly braces)
       width={sideLength} />     // variable (note curly braces)
-  );  
+  );
 
 
 - You can save things and call them as needed.
@@ -68,18 +68,18 @@ Example:
     truck: "truck.gif",
     airplane: "airplane.png",
     toaster: "toaster.jpg"
-  }; 
+  };
 
   const truck = (
-    <img 
+    <img
       src={pics.truck} />
   );
 
 
 ---------------- JSX Elements Event Listeners ----------------
-- JSX elements can have event listeners. 
+- JSX elements can have event listeners.
 - Programming in React means constantly working with event listeners.
-- You create an event listener by giving a JSX element a special attribute. 
+- You create an event listener by giving a JSX element a special attribute.
 
 Example:
   <img onClick={myFunc} />
@@ -127,10 +127,10 @@ Example:
 - Get in the habit of using it alongside JSX
 
 Example:
-  const strings = ['Home', 'Shop', 'About Me'];   
+  const strings = ['Home', 'Shop', 'About Me'];
   // Array fulla stuff
 
-  const listItems = strings.map(string => <li>{string}</li>); 
+  const listItems = strings.map(string => <li>{string}</li>);
   // Goes thru the strings array, displays array elements in <li> tags
 
   <ul>{listItems}</ul>
@@ -138,7 +138,7 @@ Example:
 
 
   // BOTH FINE
--  
+-
   <ul>
     <li>item 1</li>
     <li>item 2</li>
@@ -147,8 +147,8 @@ Example:
 
 -
   const liArray = [
-    <li>item 1</li>, 
-    <li>item 2<li>, 
+    <li>item 1</li>,
+    <li>item 2<li>,
     <li>item 3</li>
   ];
   <ul>{liArray}</ul>
@@ -156,7 +156,7 @@ Example:
 
 ---------------- Keys ----------------
 - A key is a JSX attribute.
-- React uses them internally to keep track of lists. 
+- React uses them internally to keep track of lists.
 - Without keys, React might scramble your list-items' order.
 - A list needs keys if either of the following are true:
 
@@ -186,7 +186,4 @@ Example:
     "h1",
     null,
     "Hello, world"
-  ); 
-
-
-
+  );

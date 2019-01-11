@@ -1,0 +1,74 @@
+React App File & Folder Structure 
+-------------------------
+- 'create-react-app' has set up the main structure of the app, and some dev settings.
+- React uses a tool called 'webpack' which transforms the dir's and files here into static assets. Visitors to your site are served those static assets.
+- Initial structure:
+
+    .gitignore
+    README.md
+    node_modules
+    package-lock.json
+    package.json
+    public
+    src
+
+- .gitignore
+  * Used by git to to ignore some files when committing code
+
+
+- package.json
+  * Outlines all the settings for the React app.
+  
+  * name: the name of your app
+  
+  * version: the current version
+  
+  * "private": true: a failsafe setting to avoid accidentally publishing your app as a public package within the npm ecosystem.
+  
+  * dependencies: contains all the req'd node modules & versions req'd for the app
+    + "react".     // remember the import statements?
+    + "react-dom"  //
+  
+  * devDependencies: useful node modules & versions for using the React app in a dev environment
+    + "react-scripts": provides a set of useful dev scripts for working w/ React.
+
+  * scripts: specifies aliases that you can use to access some of the react-scripts commands in a more efficient manner. 
+    Example:
+     running 'npm test' in your CLI will run 'react-scripts test --env=jsdom' behind the scenes.
+
+
+- node_modules
+  * contains dependencies & sub-dependencies of packages used by the app, as specified by package.json. 
+  * Running 'ls -1 | wc -l' within this dir will yield >800 subfolders!
+  * This folder is automatically added to the .gitignore (for good reason!)
+
+
+- package-lock.json
+  * contains the exact dependency tree installed in node_modules/
+  * this provides a way for teams working on private apps to ensure that they have the same version of dependencies and sub-dependencies. 
+  * also contains a history of changes to package.json
+
+
+- public
+  * contains assets that will be served directly without additional processing by webpack. 
+  * 'index.html' provides the entry point for the web app. 
+  * You will also see a favicon (header icon) and a manifest.json.
+  * The manifest file configures how your web app will behave if it is added to an Android user’s home screen
+
+
+- src
+  * is the heart of the React app.
+  * contains the JS that will be processed by webpack 
+  * contains the main App JavaScript component (App.js), its styles (App.css), & test suite (App.test.js)
+  * 'index.js' & index.css are the 'face' of the App and also kick off the 'registerServiceWorker.js'.
+  * registerServiceWorker.js': 
+    + takes care of caching & updating files for the end-user.
+    + allows for offline capability & faster page loads after the initial visit. 
+    + More info: https://goo.gl/KwvDNy
+
+
+- EXTRA:
+As your React app grows, it is common to add a 'components/' directory to organize components and component-related files and a views directory to organize React views and view-related files.
+
+
+

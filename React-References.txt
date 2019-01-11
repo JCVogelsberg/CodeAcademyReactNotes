@@ -1,0 +1,29 @@
+ReacT StUFF
+------------
+
+Learn React Advice
+https://www.reddit.com/r/reactjs/comments/6hcf92/how_do_i_learn_react_less_than_a_week/
+
+
+React & the WP REST API
+https://medium.freecodecamp.org/how-to-build-react-apps-on-top-of-the-wordpress-rest-api-bcc632808025
+
+
+React & Redux
+ https://medium.com/@tkssharma/understanding-redux-react-in-easiest-way-part-1-81f3209fc0e5
+
+
+A Page Full of Good React Info and Tuts!
+https://flaviocopes.com
+
+
+A List of Good React Technologies:
+https://mobilunity.com/blog/react-js-developer-salary-in-different-countries/
+
+
+Info on Boilerplates:
+https://www.reddit.com/r/reactjs/comments/82glx5/so_there_are_a_ton_of_react_boilerplates_out/
+
+
+How to build your own React boilerplate:
+https://medium.freecodecamp.org/how-to-build-your-own-react-boilerplate-2f8cbbeb9b3f

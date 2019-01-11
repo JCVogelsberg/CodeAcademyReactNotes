@@ -1,0 +1,60 @@
+Day 7 - Creating a React App
+-------------------------
+- 'create-react-app': Facebook-created node module that generates boilerplate React app
+- 'boilerplate': a template you can clone & reuse for every project
+  Provides:
+  * something that works out-of-the-box
+  * a consistent structure for React apps
+  * an out-of-the-box build script & dev server 
+
+
+---------------- Getting Started ----------------
+- Install the create-react-app command line interface (CLI) globally
+  ' npm install -g create-react-app '
+
+- Navigate to parent directory where you want to create the app
+  ' create-react-app <name-of-app> '   // No capital letters
+
+- Upon creation, you'll get this quick ref:
+
+  --  --  --  --  --  --  --  --  --  --  --  --  --
+
+    Inside that directory, you can run several commands:
+
+    npm start
+      Starts the development server.
+
+    npm run build
+      Bundles the app into static files for production.
+
+    npm test
+      Starts the test runner.
+
+    npm run eject
+      Removes this tool and copies build dependencies, configuration files
+      and scripts into the app directory. If you do this, you can’t go back!
+
+    We suggest that you begin by typing:
+
+      cd firstreactproject
+      npm start
+
+  --  --  --  --  --  --  --  --  --  --  --  --  --
+
+
+- Start the dev server: 
+  * Goto project dir
+  * 'npm start'
+
+- Browser will open to http://localhost:3000/
+
+- 
+
+
+
+
+
+
+
+
+

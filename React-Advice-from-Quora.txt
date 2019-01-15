@@ -1,0 +1,20 @@
+React Advice from Quora:
+--------------------------
+
+- For React, you do need a model, per say, but not a controller. 
+
+
+- Each React component should be thought of as an individual unit that data can flow into. As that data flows into the component, the component can either say, "dude, I don't need to update for that data, I'm good," or it can say, "I want this HTML to be my output for that input." (This make the component very testable.)
+
+
+- While each component has a 'setState' method that can be used to update what can be considered that component's individual model, I prefer to have a single model that represents the entire state for the whole application. If I ever update that global state, I make sure to trigger a top level render by calling 'setState' on the top level root component. This will update every component in the tree.
+
+
+- It's important not to modify the data that flows into a component from the global state, unless you mean to apply the change app wide. 
+
+
+(Edit: I talk about data flowing into the component, and that's true with props, but keep in mind that you can access global state directly from any component and I still consider it as input flowing into the component that can be turned into that components output.)
+
+
+
+https://www.quora.com/What-else-do-I-need-if-I-want-to-build-a-website-with-Parse-and-React-js

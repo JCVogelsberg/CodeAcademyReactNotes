@@ -1,4 +1,4 @@
-React App File & Folder Structure 
+Day 7 - React App File & Folder Structure 
 -------------------------
 - 'create-react-app' has set up the main structure of the app, and some dev settings.
 - React uses a tool called 'webpack' which transforms the dir's and files here into static assets. Visitors to your site are served those static assets.

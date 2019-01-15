@@ -1,5 +1,5 @@
-Example of a React Component
--------------------------
+// Day 7 - Example of a React Component
+// -------------------------
 
 // Import the things you need for React & the DOM
 import React from 'react';

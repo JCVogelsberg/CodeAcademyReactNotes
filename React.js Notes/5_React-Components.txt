@@ -11,13 +11,13 @@ Day 5 - React Components
 
 Example:
   import React from 'react';
-  // gets the React library, save as variable 'React'
+    // gets the React library, save as variable 'React'
   import ReactDOM from 'react-dom';
-  // get methods for dealing with DOM, save as variable 'ReactDOM'
-  // 'React' and 'ReactDOM' are both JS objects
+    // get methods for dealing with DOM, save as variable 'ReactDOM'
+    // 'React' and 'ReactDOM' are both JS objects
 
   class HurrDurr extends React.Component {
-    // creates 'HurrDurr' component class
+      // creates 'HurrDurr' component class
     render() {
       return <h1>Hello world</h1>;
     }
@@ -48,3 +48,8 @@ Example:
 - JSX elements can be either HTML-like, or component instances.
 - JSX uses capitalization to distinguish between the two!
 - That's why component class names must begin with capital letters.
+
+
+
+
+

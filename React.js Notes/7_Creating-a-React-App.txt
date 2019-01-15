@@ -48,9 +48,6 @@ Day 7 - Creating a React App
 
 - Browser will open to http://localhost:3000/
 
-- 
-
-
 
 
 

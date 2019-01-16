@@ -1,0 +1,126 @@
+Day 8 - This.props 
+-------------------------
+- A component can pass information to another component
+- Info that gets passed from one component to another is known as "props."
+- Definition:
+  * 'Props' is the name of the object that stores passed-in information. 
+  * 'This.props' refers to that storage object. 
+  * Each piece of passed-in information is called a prop. 
+  * So, props could refer to:
+    + two pieces of passed-in information
+    + the object that stores those pieces of information
+
+
+---------------- Access a Component's Props ----------------
+- Every component has props.
+- A component's props = object, which holds info about that component.
+- You can pass information to a React component by giving that component an attribute.
+
+Example:
+  <MyComponent thisCanBeAnyName="Info I wanna attach." />
+
+- To pass info that isn't a string, wrap it in curly braces. 
+
+Example, arrays:
+  <Greeting myInfo={["top", "secret", "lol"]} />
+  <Greeting name="McDerp" town="Flushing" age={21} smart={false} />
+
+- To Use:
+  ReactDOM.render(
+    <PropsDisplayer myProp="Hello"/>,
+    document.getElementById('app')
+  );
+
+---------------- Displaying the Info it is Passed ---------------- 
+- Find the component class that is going to receive that information.
+- Include 'this.props.name-of-information' in: 
+  component class
+    render method 
+      return statement <----
+
+Example:
+  class Greeting extends React.Component {
+    render() {
+      return <h1>Hi there, {this.props.firstName}</h1>;
+    }
+  }
+
+  ReactDOM.render(
+    <Greeting firstName='Steve-O' />, 
+    document.getElementById('app')
+  );
+
+  // Will return: 'Hi there, Steve-O'
+
+
+
+---------------- Pass props From Component To Component ----------------
+- The most common use of props is to pass information to a component, from a different component. 
+- The process:
+  * Pass a prop from a component to a different component
+  * Access that prop from the receiver component
+  * Render it
+- You can also use props to make decisions.
+Example:
+    render() {
+    if (this.props.name == 'Wolfgang Amadeus Mozart') {
+      return (...);
+
+
+---------------- Event Handlers in Component Classes ----------------
+- You can pass functions as props. 
+- It is especially common to pass event handler functions.
+- In React, you define an event handler as a method on the component class, just like the render method.
+- Almost all functions that you define in React will be defined as methods in a class.
+
+Example:
+  class Example extends React.Component {
+    handleEvent() {
+      alert(...);
+    }       <--------- NOTE: there is NO comma
+
+    render() {
+      return (
+        <h1 onClick={this.handleEvent}>Hello world</h1>
+      );
+    }
+  }
+  // When you click the h1 tag, the alert will display
+
+- Passing an event handler as a prop, there are two names to choose:
+  * Name of the event handler itself
+  * Name of the prop that you will use to pass the event handler
+- Naming convention: 
+  * Prop name should be the word 'on', plus your event type
+  * 'handleClick' or 'keyPress' or something
+
+
+---------------- this.props.children ----------------
+- Every component's props object has a property named children.
+- 'this.props.children' will return everything in between a component's opening and closing JSX tags.
+- If a component has more than one child between its JSX tags, then 'this.props.children' will return those children in an array
+
+
+
+---------------- defaultProps ----------------
+- A default value for a prop if none is received
+
+Example:
+  class Derp extends React.Component {
+    render() {
+      return <h1>{this.props.text}</h1>;
+    }
+  }
+
+  Derp.defaultProps = { text: 'yo' };
+
+
+
+
+
+
+
+
+
+
+...

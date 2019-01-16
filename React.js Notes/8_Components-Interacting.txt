@@ -1,0 +1,85 @@
+Day 8 - Components Interacting
+-------------------------
+- A React application can contain dozens, or even hundreds, of components. 
+- React apps are made out of components, but what makes React special isn't components themselves. 
+- What makes React special is the ways in which components interact. 
+- This is the key to React's power:
+- By nesting components inside of other components, you can build infinitely complex architectures, even if each component is relatively simple. 
+
+
+---------------- Component in Render Functions ----------------
+- Render methods can return another kind of JSX: component instances.
+- A component rendered by another component instead of being rendered by ReactDOM.render()
+
+Example:
+
+  class OMG extends React.Component {
+    render() {
+      return <h1>Whooaa!</h1>;
+    }
+  }
+
+  class Crazy extends React.Component {
+    render() {
+      return <OMG />;
+    }
+  }
+
+- Crazy's render method returns an instance of the OMG component class
+
+
+---------------- Require A File ----------------
+- Every JS file in your app is invisible to every other JS file by default. You MUST use import/export statements
+- None of this behavior is specific to React! 
+- Module systems of independent, importable files are a very popular way to organize code.
+- 'Export' & 'import' are meant to be used together, and you rarely see one without the other.
+
+
+---------------- Named Exports ----------------
+- You can export multiple things from the same file.
+Example:
+  
+  // In firstFile.js
+  export const faveManifestos = {
+    herp:
+    'http://www.ccs.neu.edu/home/shivers/rants/scum.html',
+
+    derp: 
+    'http://www.artype.de/Sammlung/pdf/russolo_noise.pdf'    
+  };
+
+  ...then import them:
+
+  // In secondFile.js
+  import { herp, derp } from './firstFile.js';
+
+- This style of importing and exporting in JS is known as "named exports."
+- With named exports, you always need to wrap your imported names in curly braces  
+
+- Can also add 'export' in front of the component class:
+Example:
+
+  export class NavBar extends React.Component {
+    render() {
+      return ...;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...

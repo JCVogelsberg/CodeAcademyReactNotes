@@ -63,7 +63,7 @@ Example:
 - You can also use props to make decisions.
 Example:
     render() {
-    if (this.props.name == 'Wolfgang Amadeus Mozart') {
+    if (this.props.name == 'Leeroy Jenkins') {
       return (...);
 
 

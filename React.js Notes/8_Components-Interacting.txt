@@ -40,7 +40,7 @@ Example:
 Example:
   
   // In firstFile.js
-  export const faveManifestos = {
+  export const stuffAndThings = {
     herp:
     'http://www.ccs.neu.edu/home/shivers/rants/scum.html',
 

@@ -1,0 +1,21 @@
+JavaScript Vocab
+-------------------------
+
+- Objects: variables that contain data, such as numbers, strings, whatever
+
+- Methods:
+  * variables defined in objects which are functions 
+  * when called, can access and manipulate the data within the object
+
+
+- Callback Functions:
+  * Functions that get passed in as parameters and invoked
+  * Callback functions do NOT have parentheses (parentheses = invoking)
+  * .map() always
+
+- constructor: 
+  * Constructor functions are functions that when called, create a new object and assign it to the 'this' in the constructor function call
+  
+- super:
+  * a function used to call the constructor of the parent class & access functions on an object's parent class
+

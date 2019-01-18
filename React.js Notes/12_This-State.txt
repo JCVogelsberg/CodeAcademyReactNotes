@@ -1,0 +1,53 @@
+Day 12 - This.state 
+-------------------------
+- Dynamic information: information that can change
+- React components will often need dynamic information in order to render
+- Two ways for a component to get dynamic info: 
+  * props
+  * state
+- Besides props and state, every value used in a component should always stay exactly the same
+- Unlike props, a component's state is not passed in from the outside. 
+- A component decides its own state.
+
+
+---------------- Setting Initial State ----------------
+- To make a component have state, give the component a state property. 
+- This property should be declared inside of a constructor method
+
+Example:
+  class Example extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { mood: 'decent' };
+    }
+
+    render() {
+      return <div></div>;
+    }
+  }
+
+  <Example />   <--- has a state, equal to { mood: 'decent' }
+
+
+- constructor: 
+  * Constructor functions are functions that when called, create a new object and assign it to the 'this' in the constructor function call
+
+- super:
+  * a function used to call the constructor of the parent class & access functions on an object's parent class
+  * React components always have to call super in their constructors
+
+- this.state:
+  * <Example /> has a state, and its state is equal to { mood: 'decent' }
+
+
+---------------- Access a Component's state ----------------
+- To read a component's state, use the expression 'this.state.name-of-property'
+- Just like 'this.props', you can use 'this.state' from any property defined inside of a component class's body
+- 
+
+
+
+
+
+
+

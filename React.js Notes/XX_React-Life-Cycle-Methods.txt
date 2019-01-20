@@ -1,0 +1,10 @@
+Day XX - React Life Cycle Methods 
+-------------------------
+- Functions 'componentDidMount' and 'componentDidUpdate'
+- 
+
+
+
+
+
+---------------- XxX ----------------

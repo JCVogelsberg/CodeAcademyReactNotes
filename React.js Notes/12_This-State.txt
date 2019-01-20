@@ -9,17 +9,21 @@ Day 12 - This.state
   * props
   * state
 
-- Props: passed in from the outside. 
+- Props: 
+  * passed in from the outside. 
+  * A component cannot update its own props
+  * Used to store info that can be changed, but only by a DIFFERENT COMPONENT
 
 - State: 
   * not passed in from the outside
   * A component decides its own state
-
+  * A component CAN update its own state
+  * Used to store info that the component itself can change
+  
 - Besides props and state, every value used in a component should always stay exactly the same
 
 
 ---------------- Setting Initial State ----------------
-
 - To make a component have state:
   * Give the component a state property
   * This property should be declared inside of a constructor method
@@ -42,7 +46,7 @@ Example:
   
 
 - constructor: 
-  * Constructor functions are functions that when called, create a new object and assign it to the 'this' in the constructor function call
+  * Function that when called, creates a new object and assigns it to the 'this' in the constructor function call
 
 - super:
   * a function used to call the constructor of the parent class & access functions on an object's parent class
@@ -97,10 +101,21 @@ Example:
     });
   }  
 
-- The line 'this.makeSomeFog = this.makeSomeFog.bind(this);' is necessary because makeSomeFog()'s body contains the word 'this'
-- Event handlers in JS will strip away the 'this' unless it is bound
-- Whenever you define an event handler that uses 'this', you need to add 'this.methodName = this.methodName.bind(this)' to your constructor function
-- 
+- The line 'this.makeSomeFog = this.makeSomeFog.bind(this);' 
+
+  * If a method will be used as an event handler, you must bind it
+  * This is necessary because makeSomeFog()'s body contains the word 'this'
+  * Event handlers in JS will strip away the 'this' unless it is bound
+  * It should go in the constructor function
+
+
+---------------- Live Updates! ----------------
+- Any time that you call 'this.setState()', .render() is AUTOMATICALLY called as soon as the state has changed!
+- Think of 'this.setState()' as actually being two things: 
+  * this.setState()
+  * .render(), called immediately after
+
+- That is why you can't call 'this.setState()' from inside of the '.render()' method!
 
 
 

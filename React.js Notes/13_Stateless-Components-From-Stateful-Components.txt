@@ -1,0 +1,26 @@
+Day 13 - Stateless Components From Stateful Components
+-------------------------
+"In this lesson, you will learn how to pass props from a stateful parent component to a stateless child component. This programming pattern will provide context on when to use props versus state."
+
+- Our first programming pattern!
+
+Two React components: 
+- A stateful component & a stateless component
+  * 'Stateful': Any component that has a state property
+  * 'Stateless': Any component that does not have a state property
+
+- Rendering is the only way for a component to pass props to another component.
+
+- Any component rendered by a different component must be included in an export statement.
+
+
+
+
+Example:
+
+  // In Parent.js
+  render() {
+    return <Child name={this.state.name} />
+  }
+
+- Rendering <Parent /> will render both components, because Parent's render function returns a <Child />

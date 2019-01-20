@@ -4,6 +4,7 @@ Day 13 - Stateless Components From Stateful Components
 
 - Our first programming pattern!
 
+
 Two React components: 
 - A stateful component & a stateless component
   * 'Stateful': Any component that has a state property
@@ -12,7 +13,6 @@ Two React components:
 - Rendering is the only way for a component to pass props to another component.
 
 - Any component rendered by a different component must be included in an export statement.
-
 
 
 

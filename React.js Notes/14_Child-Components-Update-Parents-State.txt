@@ -1,0 +1,60 @@
+Day 14 - Child Components Update Their Parents' State
+-------------------------
+- How it works:
+  1) Parent component class defines a method that calls 'this.setState()'
+  
+  2) Parent component binds the newly-defined method to the current instance of the component in its constructor (so when we pass the method to the child, it will still update the parent).
+
+  3) Once the parent has defined a method that updates its state & bound to it, the parent then passes that method down to a child.
+
+  4) The child receives the passed-down function, and uses it as an event handler.
+
+
+---------------- Define an Event Handler ----------------
+- To make a child component update its parent's state, the first step is something that you've seen before: you must define a state-changing method on the parent.
+
+
+changeName(newName) {
+  this.setState({
+    name: newName
+  });
+}
+
+
+
+- If a function takes an argument: When a user selects something with an event handler, it will invoke the function, but it won't pass the correct argument! Instead of passing a new name, it will pass an event object, as all event listeners do.
+
+This is a common problem when passing down an event handler in React. The solution: define another function.
+
+- This new function should take an event object as an argument, extract the name that you want from that event object, and then call the event handler, passing in the extracted name!
+
+
+---------------- Overview ----------------
+
+Lesson 1
+  - first React programming pattern
+  - a stateful, parent component passes down a prop to a stateless, child component.
+
+Lesson 2
+  - lesson 1's pattern is actually part of a larger pattern
+  - a stateful, parent component passes down an event handler to a stateless, child component. 
+  - The child component then uses that event handler to update its parent's state.
+
+Lesson 3
+  - A child component updates its parent's state, and the parent passes that state to a sibling component. "Mom, will you change my state?"
+
+
+---------------- Sibling Components ----------------
+
+- Components should only have one job.
+
+- In the last lesson, Child had two jobs:
+  * Child displayed a name.
+  * Child offered a way to change that name.
+
+- Break that component up:
+  * One stateless component display info
+  * A different stateless component offer the ability to change that info
+
+- 
+

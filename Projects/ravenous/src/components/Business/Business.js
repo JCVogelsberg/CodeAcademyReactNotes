@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import './Business.css'
 
 
+// Business component displays businesses
 class Business extends React.Component {
   render() {
     return (

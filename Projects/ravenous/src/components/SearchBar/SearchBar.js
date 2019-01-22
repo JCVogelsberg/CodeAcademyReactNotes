@@ -1,7 +1,5 @@
 // the search bar should allow users to search businesses by:
 // Best Match, Highest Rated, Most Reviewed
-
-
 import React from 'react';
 import './SearchBar.css'; 
 
@@ -14,14 +12,41 @@ const sortByOptions = {
 
 
 class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      term: '',
+      location: '',
+      sortBy: 'best_match'
+    }
+    this.handleSortByChange = this.handleSortByChange.bind(this);
+  }
 
-  // You'll use this method when building the structure of the search bar component
+
+  // Creates a <ul> containing the (3) sorting options above the search bars
   renderSortByOptions() {
     return Object.keys(sortByOptions).map(sortByOption => {
       let sortByOptionValue = sortByOptions[sortByOption];
-      return <li key={sortByOptionValue}>{sortByOption}</li>;
+      return <li className={this.getSortByClass(sortByOptionValue)} key={sortByOptionValue}>{sortByOption}</li>;
     });
+  }             //
+
+
+  // Returns the current CSS class for a sorting option
+  getSortByClass(sortByOption) {
+    if (this.state.sortBy === sortByOption) {
+      return 'active';   // adds 'active' class to <li> element
+    } else {
+      return '';
+    }     
   }
+
+
+  // Sets the state of a sorting option
+  handleSortByChange(sortByOption) {
+    this.setState({ sortBy: sortByOption })
+  }
+
 
   render() {
     return (
@@ -36,7 +61,7 @@ class SearchBar extends React.Component {
           <input placeholder="Where?" />
         </div>
         <div className="SearchBar-submit">
-          <a>Let's Go</a>
+          <a>Let's Go</a>      
         </div>
       </div>
     );

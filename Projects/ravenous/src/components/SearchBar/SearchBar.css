@@ -37,6 +37,8 @@
   color: #f0c36c;
 }
 
+.SearchBar-sort-options li.splorg { color: red; }
+
 .SearchBar-fields {
   display: flex;
   justify-content: center;

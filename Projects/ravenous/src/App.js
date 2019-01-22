@@ -5,6 +5,7 @@ import BusinessList from './components/BusinessList/BusinessList';
 import SearchBar from './components/SearchBar/SearchBar';
 
 
+// Sample Business
 const business = {
   imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
   name: 'MarginOtto Pizzeria',
@@ -18,6 +19,7 @@ const business = {
 };
 
 
+// Array of sample Businesses
 const businesses = [
   business,
   business,

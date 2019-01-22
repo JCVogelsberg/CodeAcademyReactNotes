@@ -1,9 +1,9 @@
-// Simulates what a returned list of businesses would look like in the app 
-
 import React from 'react';
 import './BusinessList.css';
 import Business from '../Business/Business';
 
+// BusinessList component loops through 'businesses' array
+// and displays the businesses listed therein
 class BusinessList extends React.Component {
   render() {
     return (

@@ -1,0 +1,21 @@
+Day 17 - HTTP Requests
+-------------------------
+- HTTP:
+  * 'Hypertext Transfer Protocol'
+  * Used to structure requests & responses over the internet
+  * HTTP requires data to be transferred from one point to another over the network
+
+- The transfer of resources happens using TCP (Transmission Control Protocol)
+- Once the TCP connection is established:
+  * the client sends a HTTP GET request to the server to retrieve the webpage
+  * After the server has sent the response, it closes the TCP connection
+  * If you open the website again, or browser requests something from, a new connection is opened which follows the same process described above. 
+
+  
+
+
+
+
+
+
+---------------- XxX ----------------

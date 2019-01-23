@@ -1,0 +1,132 @@
+Day 17 - HTTP & Authentication
+-------------------------
+
+- HTTP:
+  * 'Hypertext Transfer Protocol'
+  * Used to structure requests & responses over the internet
+  * HTTP requires data to be transferred from one point to another over the network
+
+- The transfer of resources happens using TCP (Transmission Control Protocol)
+- Once the TCP connection is established:
+  * the client sends a HTTP GET request to the server to retrieve the webpage
+  * After the server has sent the response, it closes the TCP connection
+  * If you open the website again, or browser requests something from, a new connection is opened which follows the same process described above. 
+
+- GET requests are the most common type of request!
+
+
+---------------- Authentication ---------------- 
+
+- Authentication is the process used by apps to determine & confirm identities of users.
+- It ensures that:
+  * the correct content is shown to users. 
+  * incorrect content is secured & unavailable to unauthorized users
+
+- Most common implementation of authentication:
+  * requires a user to input their username/email & password
+  * App's server checks the creds to determine if UN & PW is correct
+  * If creds are correct, the user is logged in & able to use the app
+
+- Typically, upon a successful login, the app will respond w/ an authentication token (auth token) for the client to use for additional HTTP requests.
+- This token is then stored on the user's computer, preventing the need for users to continuously log in
+- This token generally expires after a certain amount of time
+
+
+---------------- API Keys ---------------- 
+- Sometimes authentication is another app, rather than an interaction between a human & an app
+- Many apps expose interfaces to their info in the form of an API (app program interface)
+  * the Spotify API provides endpoints for almost all of its functionality
+  * This allows apps to fetch data from Spotify music catalog & manage user’s playlists/saved music
+- Since these external requests could overwhelm a service & also access user information, they need to be secured using authentication
+- The most basic pattern for API access from another app is using an API key.
+- Public APIs usually provide a developer portal where you can register your app & generate a corresponding API key. 
+- This key is then unique to your app. When your app makes a request, this key is sent along with it. 
+- The API can then verify that your app is allowed access & provide the correct response based on the permission level of your app.
+- The API can track what type & frequency of requests each app is making. 
+- This data can be used to throttle requests from a specific app to a pre-defined level of service. 
+- This prevents apps from spamming an endpoint or abusing user data, since the API can easily block that app's API key & prevent further malicious use of the API by that app
+
+
+---------------- OAuth ----------------  
+- For many apps, generic developer-level API key is not sufficient. 
+- Example: Facebook doesn't want Tinder to access all of their users' data, just the users who have opted in
+- OAuth:
+  * Developed in '06 by lead Twitter dav Blaine Cook; Version 1.0 was published in April '10
+  * An open standard & is used to grant permission for apps to access user information without forcing users to give away their passwords
+
+- Open standard:
+  * A publicly available definition of how some functionality should work
+  * However, the standard does not actually build out that functionality
+  * As a result, each API is required to implement their own version of OAuth & therefore may have a slightly different implementation or flow. 
+
+- Many apps implementing OAuth will first ask the user to select which service they would like to use for credentials
+- After selecting the service, the user will be redirected to the service to login. 
+- This login confirms the user’s identity & typically provides the user with a list of permissions the originating app is attempting to gain on the user’s account.
+- If the user confirms they want to allow this access, they will be redirected back to the original site, along with an access token. 
+- This access token is then saved by the originating app.
+
+
+---------------- OAuth 2 ----------------  
+- OAuth evolved out of Twitter, so there were use cases not originally considered
+- This led to the creation of OAuth 2
+- OAuth 2 allows for different authentication flows depending on the specific app requesting access & the level of access being requested.
+- OAuth 2 is still an open standard, so each API will have its own flow based on its particular implementation
+
+
+---------------- Client Credentials Grant ----------------
+- An app will not need access to user info, but may implement the added security & consistency of the OAuth 2 spec. 
+- This type of grant is used to access app-level data (similar to the dev API key above) & the end user does not participate in this flow.
+- Instead of an API key, a 'client ID' & a 'client secret' (strings provided to the app when it was authorized to use the API) are exchanged for an access token (& sometimes a refresh token). 
+- An email & password are exchanged for an authentication token.
+- It is essential to ensure the 'client secret' does not become public information, just like a password!
+- So do NOT commit this information to a public git repository. 
+- Additionally, to ensure integrity of the 'secret key', it should not be exposed on the client-side & all requests containing it should be sent server-side.
+- Similar to the previously-mentioned keys, the returned access token is included on requests to identify the client making the requests & is subject to API restrictions.
+- This access token is often short-lived, expiring frequently. Upon expiration, a new access token can be obtained by re-sending the client credentials or, preferably, a refresh token.
+- Refresh tokens are an important feature of the OAuth 2 updates, encouraging access tokens to expire often and, as a result, be continuously changed.
+
+
+---------------- Authorization Code Grant ----------------
+- This flow is one of the most common implementations of OAuth & will look familiar if you’ve ever signed into a web app with Google or Facebook.
+
+- A user is redirected to the authenticating site, verifies the app requesting access & permissions, & is redirected back to the referring site with an *authorization code*.
+
+- The requesting app then takes this code & submits it to the authenticating API, along with the app’s client ID & client secret to receive an access token & a refresh token. 
+
+- This access token & refresh token are then used in the same manner as the previous flow.
+
+- To avoid exposing the client ID & secret, this step of the flow should be done on the server side of the requesting app.
+
+- Since tokens are tied both to users & requesting apps, the API has a great deal of control over limiting access based on user behavior, app behavior, or both.
+
+
+
+---------------- Implicit Grant ----------------
+- 'Authorization Code Grant' & 'Client Credentials Grant' cause the client secret key to be exposed, so they need to be handled server-side. 
+
+- Some apps may need to access an OAuth API but don't have the necessary server-side capabilities to keep this information secure.
+
+- The 'Implicit Grant OAuth flow' was designed for this very use case. 
+
+- This flow prompts the user through similar authorization steps as the Authorization Code flow, but does not involve the exchange of the client secret.
+
+- The result of this interaction is an access token, and typically no refresh token. 
+
+- The access token is then used by app to make additional requests to the service, but is not sent to the server side of the requesting app.
+
+- This flow allows apps to use OAuth APIs without fear of potentially exposing long-term access to a user or app's information.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

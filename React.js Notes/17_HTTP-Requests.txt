@@ -1,5 +1,6 @@
 Day 17 - HTTP Requests
 -------------------------
+
 - HTTP:
   * 'Hypertext Transfer Protocol'
   * Used to structure requests & responses over the internet
@@ -11,11 +12,15 @@ Day 17 - HTTP Requests
   * After the server has sent the response, it closes the TCP connection
   * If you open the website again, or browser requests something from, a new connection is opened which follows the same process described above. 
 
-  
+- GET requests are the most common type of request!
+- 
 
 
 
 
 
 
----------------- XxX ----------------
+
+
+
+---------------- 

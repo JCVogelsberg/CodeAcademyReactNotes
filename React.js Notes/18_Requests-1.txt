@@ -1,0 +1,35 @@
+Day 18 - Requests I
+-------------------------
+
+- AJAX: a set of techniques for creating asynchronous requests using JS 
+- How to make these requests using two techniques: 
+  * XMLHttpRequests
+  * jQuery
+
+- GET request: retrieves a resource, 'gets' it
+- POST request: creates a resource, 'posts' it to the server
+
+- Things used in this lesson:
+  * JS's XHR object: used to make GET & POST requests
+  * Query strings
+  * Datamuse API: for GET requests 
+  * Rebrandly URL Shortener API: for POST requests
+  * JSON: JavaScript Object Notation, the format in which our data is sent to us.
+
+Create a Rebrandly API Key:
+https://www.codecademy.com/articles/rebrandly-signup
+
+
+---------------- JS Event Loop ----------------  
+- JS uses an event loop to handle asynchronous function calls. 
+
+- When a program is run:
+  * function calls are made & added to a stack
+  * functions that make requests that wait for servers to respondare sent to a separate queue. 
+  * Once the stack has cleared, then the functions in the queue are executed.
+
+- Web devs use the event loop to create a smoother browsing experience by deciding:
+  * when to call functions 
+  * how to handle asynchronous events. 
+
+  

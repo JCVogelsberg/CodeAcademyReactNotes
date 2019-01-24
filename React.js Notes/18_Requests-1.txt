@@ -1,13 +1,35 @@
 Day 18 - Requests I
 -------------------------
 
-- AJAX: a set of techniques for creating asynchronous requests using JS 
+- AJAX: 
+  * 'Asynchronous JavaScript & XML'
+  * A set of tools that are used together to take advantage of JS's asynchronous capabilities.
+
 - How to make these requests using two techniques: 
   * XMLHttpRequests
   * jQuery
 
-- GET request: retrieves a resource, 'gets' it
-- POST request: creates a resource, 'posts' it to the server
+- GET request: 
+  * retrieves a resource, 'gets' it
+  * only request information from other sources.
+
+- POST request: 
+  * creates a resource, 'posts' it to the server
+  * can introduce new information to other sources in addition to requesting it.
+
+- Both GET & POST can be written using an XMLHttpRequest object and vanilla JS.
+
+- Writing GET & POST requests with XHR objects and vanilla JavaScript requires:
+  * constructing the XHR object using 'new'
+  * setting the responseType
+  * creating a function that will handle the response object
+  * opening & sending the request
+
+----------------------------------------------------------
+
+  Determining how to correctly write the requests and how to properly implement them requires carefully reading the documentation of the API with which you're working.
+
+----------------------------------------------------------
 
 - Things used in this lesson:
   * JS's XHR object: used to make GET & POST requests
@@ -25,11 +47,62 @@ https://www.codecademy.com/articles/rebrandly-signup
 
 - When a program is run:
   * function calls are made & added to a stack
-  * functions that make requests that wait for servers to respondare sent to a separate queue. 
+  * functions that make requests that wait for servers to respond are sent to a separate queue. 
   * Once the stack has cleared, then the functions in the queue are executed.
 
 - Web devs use the event loop to create a smoother browsing experience by deciding:
   * when to call functions 
   * how to handle asynchronous events. 
 
-  
+
+---------------- XHR ----------------
+- const xhr = new XMLHttpRequest();
+- The XMLHttpRequest object is used in JavaScript to interact with servers, creating & sending requests.
+- You can name it anything, but 'xhr' is best practices
+
+[ see file '18_Boilerplate-AJAX-GET-Request' ]
+
+
+---------------- Query String ----------------
+- A query string contains additional info to be sent w/ a request
+- A query string is separated from the URL using a ? character
+- The 'website.com/?s=searchTerm' in WP is a query string!
+
+Example:
+  https://api.datamuse.com/words?key=value
+  https://api.datamuse.com/words?key=value&anotherKey=anotherValue
+
+
+
+---------------- POST Request ----------------
+- The major difference between a GET request & POST request is that a POST request requires additional information to be sent through the request. 
+- This additional information is sent in the body of the post request.
+
+Example:
+  const xhr = new XMLHttpRequest();
+  const url = 'https://api-to-call.com/endpoint';
+  const data = JSON.stringify({id: '200'});
+
+  xhr.responseType = 'json';
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      return xhr.response;
+    }
+  };
+
+  xhr.open('POST',url);
+  xhr.send(data);  
+
+
+
+
+
+
+- JSON.stringify() will convert a value to a JSON string. 
+- 
+
+
+
+
+
+...

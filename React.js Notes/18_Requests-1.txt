@@ -25,11 +25,11 @@ Day 18 - Requests I
   * creating a function that will handle the response object
   * opening & sending the request
 
-----------------------------------------------------------
+==========================================================
 
   Determining how to correctly write the requests and how to properly implement them requires carefully reading the documentation of the API with which you're working.
 
-----------------------------------------------------------
+==========================================================
 
 - Things used in this lesson:
   * JS's XHR object: used to make GET & POST requests

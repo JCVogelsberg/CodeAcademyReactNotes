@@ -9,6 +9,9 @@ Day 19 - Requests II - Fetch
   * taking successful responses and rendering it on the webpage
 
 
+- .json(): converts Promises to JSON objects.
+- async: creates a function that returns a Promise.
+
 
 ---------------- Promises ----------------  
 - Promise: An object that handles asynchronous data. 

@@ -95,11 +95,8 @@ Example:
 
 
 
-
-
-
 - JSON.stringify() will convert a value to a JSON string. 
-- 
+
 
 
 

@@ -9,8 +9,8 @@ class BusinessList extends React.Component {
     return (
       <div className="BusinessList">
         {
-          this.props.businesses.map(spork => {
-            return <Business business={spork} />;
+          this.props.businesses.map(business => {
+            return <Business business={business} key={business.id} />;
           })
         }
       </div>
@@ -18,5 +18,5 @@ class BusinessList extends React.Component {
   }
 };
 
-export default BusinessList;
+export default BusinessList; 
 

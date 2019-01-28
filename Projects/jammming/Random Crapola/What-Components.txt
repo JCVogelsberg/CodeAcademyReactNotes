@@ -1,0 +1,12 @@
+What components does the application need?
+
+How will the application handle state?
+
+What methods does the application need?
+
+How does the application hook up to the Spotify API?
+
+How does the application save a playlist to a user's profile?
+
+As you complete the steps, you can compare the structure you devised to the one we use recommend in the project steps.
+

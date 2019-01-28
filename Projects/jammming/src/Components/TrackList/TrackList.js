@@ -1,16 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './TrackList.css';
 import Track from '../Track/Track';
 
+
+// Lists out all the Tracks created by the Track component
 class TrackList extends React.Component {
   render() {
     return (
       <div className="TrackList">
-          You will add a map method that renders a set of Track components
+        {
+          this.props.tracks.map(track => {
+            return <Track 
+              track={track} 
+              key={track.id} 
+              name={track.name} 
+              artist={track.artist} 
+              album={track.album} 
+            />
+          })
+        }
       </div>
     );
   }
 }
 
 export default TrackList;
+
+

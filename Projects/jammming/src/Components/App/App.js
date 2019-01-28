@@ -6,18 +6,68 @@ import Playlist from '../Playlist/Playlist';
 
 // DO I NEED TO IMPORT TRACK.js or TRACKLIST.js ???
 
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      searchResults: [
+        {
+          name: 'Moonage Daydream', 
+          artist: 'David Bowie', 
+          album: 'Ziggy Stardust...', 
+          id: '72' 
+        },
+        {
+          name: 'Kokomo', 
+          artist: 'The Beach Boys', 
+          album: 'Still Cruisin', 
+          id: '89' 
+        },
+        {
+          name: 'Mekong', 
+          artist: 'The Refreshments', 
+          album: 'Fizzy, Fuzzy...', 
+          id: '96' 
+        }
+      ],
+
+      playlistTracks: [
+        {
+          name: 'Playlist Song #1', 
+          artist: 'Playlist Artist #1', 
+          album: 'Playlist Album #1', 
+          id: '200' 
+        },
+        {
+          name: 'Playlist Song #2', 
+          artist: 'Playlist Artist #2', 
+          album: 'Playlist Album #2', 
+          id: '300' 
+        },
+        {
+          name: 'Playlist Song #3', 
+          artist: 'Playlist Artist #3', 
+          album: 'Playlist Album #3', 
+          id: '400' 
+        }
+      ],
+      playlistName: 'Muh Music.'
+    }
+  }
+
   render() {
     return (
       <div>
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
         <div className="App">
-//           Add a SearchBar component 
-<SearchBar />
+          <SearchBar searchResults={this.state.searchResults} />
           <div className="App-playlist">
-//           Add a SearchResults component
-//           Add a Playlist component
+            <SearchResults searchResults={this.state.searchResults} />
+            <Playlist 
+              playlistName={this.state.playlistName} 
+              playlistTracks={this.state.playlistTracks} 
+            />
           </div>
         </div>
       </div>

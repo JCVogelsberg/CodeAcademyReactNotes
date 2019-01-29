@@ -55,15 +55,24 @@ class App extends Component {
       playlistName: 'Muh Music.'
     }
     this.addTrack = this.addTrack.bind(this);
+    this.removeTrack = this.removeTrack.bind(this);
   }
 
 
-  addTrack(track) {
-    if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
-      this.setState(this.state.playlistTracks.push(this.savedTrack));
+  addTrack(track){
+    if(this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)){
+      return;
+    } else {
+      let newPlaylist = this.state.playlistTracks.push(track);
+      this.setState({ playlistTracks: newPlaylist });
     }
   }
 
+
+  removeTrack(track){
+    let filteredArray = this.state.playlistTracks.filter(item => item.id !== track.id);
+    this.setState({ playlistTracks: filteredArray });
+  }
 
   render() {
     return (
@@ -72,10 +81,14 @@ class App extends Component {
         <div className="App">
           <SearchBar searchResults={this.state.searchResults} />
           <div className="App-playlist">
-            <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} />
+            <SearchResults 
+              searchResults={this.state.searchResults} 
+              onAdd={this.addTrack} 
+            />
             <Playlist 
               playlistName={this.state.playlistName} 
               playlistTracks={this.state.playlistTracks} 
+              onRemove={this.removeTrack} 
             />
           </div>
         </div>
@@ -85,6 +98,8 @@ class App extends Component {
 }
 
 export default App;
+
+
 
 
 

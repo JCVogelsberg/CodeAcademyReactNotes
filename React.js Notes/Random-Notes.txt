@@ -1,0 +1,25 @@
+Random Notes:
+- The constructor argument 'props' pulls its value from the from the React.Component class
+
+- The stuff on the right-hand side of an assignment (everything after the =) is called an expression.
+
+- Flow:
+You pass the state of a user's [whatevers] from the App component down to components that render them.
+
+- Include 'this.props.name-of-information' in return statement: 
+  
+  component class
+    render method 
+      return statement <----
+
+
+
+- When a child component updates their parents' state, will the Parent Method always be an event handler?
+
+  My understanding is this ... the child component would have the event listener, and likely the event handler that then passes the new value to the parent component, which then contains a method to update the state in the parent component. I could be wrong, but thats how I visualize it. For expample, the child component could have an input field with an onChange event listener, there would be a handleChange event handler in the child class that extracts the value from the event object, and passes it to the parent. The parent would then have a method for .setState to update state with the value being passed back.
+
+
+
+
+
+  

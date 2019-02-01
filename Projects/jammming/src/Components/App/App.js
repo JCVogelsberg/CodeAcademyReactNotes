@@ -57,22 +57,24 @@ class App extends Component {
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
+
+//    this._bind('updatePlaylistName', 'addTrack', 'removeTrack', 'savePlaylist', 'search');
   }
 
 
   addTrack(track){
-    if(this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)){
-      return;
-    } else {
-      let newPlaylist = this.state.playlistTracks.push(track);
-      this.setState({ playlistTracks: newPlaylist });
+    if(!this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)){
+      this.setState(prevState => ({
+        playlistTracks: [ ...prevState.playlistTracks, track ] 
+      }));
     }
   }
 
 
   removeTrack(track){
-    let filteredArray = this.state.playlistTracks.filter(item => item.id !== track.id);
-    this.setState({ playlistTracks: filteredArray });
+    this.setState({
+      playlistTracks: this.state.playlistTracks.filter(playlistTrack => playlistTrack.id !== track.id)
+    });
   }
 
 

@@ -31,8 +31,8 @@ class Track extends React.Component {
     return (
       <div className="Track">
         <div className="Track-information">
-          <h3> {this.props.track.name} </h3>
-          <p> {this.props.track.artist} | {this.props.track.album} ({this.props.track.year}) </p>
+          <h3> "{this.props.track.name}" </h3>
+          <p> <strong>{this.props.track.artist}</strong> | <i>{this.props.track.album}</i> ({this.props.track.year}) </p>
         </div>
 
         {this.renderAction()}   {/* The '+' to the right */}

@@ -51,8 +51,12 @@ Let us know if you need clarification on any of that :slightly_smiling_face:
 
 =================================================================
 
+Hey Tiago, basically what this is doing in addTrack is first seeing if we can use the array .find function to search the entire playlistTrack array and see if it has any values with an id equal to track id. If it can't find any values that means the track doesn't exist so we just add it to our state by taking what's already in our state and spreading out all the values into a new array with track being at the end of this new array. The syntax might be a little tricky to follow at first.
 
 
+=================================================================
 
+
+For remove you're using the array .filter function to remove the track the same way .find checks to see if the track exists. It'll search the entire array and exclude any elements that has the same id as the track's id.
 
   

@@ -17,21 +17,42 @@ class App extends Component {
           artist: 'David Bowie', 
           album: 'The Rise & Fall of Ziggy Stardust...', 
           year: '1972',
-          id: '72' 
+          id: '01' 
         },
         {
-          name: 'Kokomo', 
+          name: 'Somewhere Near Japan', 
           artist: 'The Beach Boys', 
           album: 'Still Cruisin\'', 
           year: '1989',
-          id: '89' 
+          id: '02' 
         },
         {
-          name: 'Mekong', 
+          name: 'European Swallow', 
           artist: 'The Refreshments', 
           album: 'Fizzy, Fuzzy, Big & Buzzy', 
           year: '1996',
-          id: '96' 
+          id: '03' 
+        },
+        {
+          name: 'Get It Faster', 
+          artist: 'Jimmy Eat World', 
+          album: 'Bleed American', 
+          year: '2001',
+          id: '04' 
+        },
+        {
+          name: 'Life During Wartime', 
+          artist: 'Talking Heads', 
+          album: 'Fear of Music', 
+          year: '1979',
+          id: '05' 
+        },
+        {
+          name: 'Anna Begins', 
+          artist: 'Counting Crows', 
+          album: 'August & Everything After', 
+          year: '1993',
+          id: '06' 
         }
       ],
 

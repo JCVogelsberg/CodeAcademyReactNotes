@@ -1,4 +1,5 @@
 Random Notes:
+
 - The constructor argument 'props' pulls its value from the from the React.Component class
 
 - The stuff on the right-hand side of an assignment (everything after the =) is called an expression.
@@ -12,11 +13,43 @@ You pass the state of a user's [whatevers] from the App component down to compon
     render method 
       return statement <----
 
+=================================================================
+
+event.target.value
+
+- Basically it retrieves value of whatever input it was called on.
+
+- If it’s your input element, whatever you insert in your input can be accessed through 'event.target.value'
+
+=================================================================
 
 
 - When a child component updates their parents' state, will the Parent Method always be an event handler?
 
   My understanding is this ... the child component would have the event listener, and likely the event handler that then passes the new value to the parent component, which then contains a method to update the state in the parent component. I could be wrong, but thats how I visualize it. For expample, the child component could have an input field with an onChange event listener, there would be a handleChange event handler in the child class that extracts the value from the event object, and passes it to the parent. The parent would then have a method for .setState to update state with the value being passed back.
+
+
+=================================================================
+
+So it’s asking you to create a method called `handleNameChange` which serves as an event handler. That is when an event such as a click is triggered, this method will be called. 
+
+
+In this case rather than a click you are listening for an change event on the `<input>` tag. Whenever this tag is changed, you want to call the `handleNameChange`.
+
+
+So you will need to attach an `onChange` listener to the `<input>` tag. When the `onChange` event calls the `handleNameChange` method, it will send an object containing information about the event such as what was changed.  So when you create `handleNameChange` make sure it accepts a parameter.
+
+
+The `onNameChange` is coming from the App component as a prop that will update the playlistName state. The way to do this is to call `this.props.onNameChange(newValue)`.
+
+
+The `newValue` will be from that `event` object that was fired. You will want to extract the text from the object. _Hint: `event.target.value`_
+
+
+Let us know if you need clarification on any of that :slightly_smiling_face:
+
+
+=================================================================
 
 
 

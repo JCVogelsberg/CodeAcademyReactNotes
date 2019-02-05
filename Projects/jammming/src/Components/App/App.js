@@ -13,24 +13,24 @@ class App extends Component {
     this.state = {
       searchResults: [
         {
-          name: 'Moonage Daydream', 
-          artist: 'David Bowie', 
-          album: 'The Rise & Fall of Ziggy Stardust...', 
-          year: '1972',
-          id: '01' 
-        },
-        {
           name: 'Somewhere Near Japan', 
           artist: 'The Beach Boys', 
           album: 'Still Cruisin\'', 
           year: '1989',
-          id: '02' 
+          id: '01' 
         },
         {
           name: 'European Swallow', 
           artist: 'The Refreshments', 
           album: 'Fizzy, Fuzzy, Big & Buzzy', 
           year: '1996',
+          id: '02' 
+        },
+        {
+          name: 'Queen Bitch', 
+          artist: 'David Bowie', 
+          album: 'Hunky Dory', 
+          year: '1971',
           id: '03' 
         },
         {
@@ -84,6 +84,8 @@ class App extends Component {
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
+    this.savePlaylist = this.savePlaylist.bind(this);
+    this.search = this.search.bind(this);
 //    this._bind('updatePlaylistName', 'addTrack', 'removeTrack', 'savePlaylist', 'search');
   }
 
@@ -105,8 +107,12 @@ class App extends Component {
     this.setState({ playlistName: name });  
   }
 
-  savePlaylist() {
-    
+  savePlaylist(){
+    let trackURIs = this.state.playlistTracks.map(track => track.uri);
+  }
+
+  search(searchTerm) {
+    console.log(searchTerm);
   }
 
   render() {
@@ -116,7 +122,11 @@ class App extends Component {
         <div className="App">
 
           {/* Searchbar at top */}
-          <SearchBar searchResults={this.state.searchResults} />
+          <SearchBar 
+            searchResults={this.state.searchResults} 
+            onSearch={this.search}
+          />
+
           <div className="App-playlist">
             
             {/* The left column */}
@@ -131,6 +141,7 @@ class App extends Component {
               playlistTracks={this.state.playlistTracks} 
               onRemove={this.removeTrack} 
               onNameChange={this.updatePlaylistName}
+              onSave={this.savePlaylist}
             />
 
           </div>
@@ -140,9 +151,4 @@ class App extends Component {
   }
 }
 
-export default App;
-
-
-
-
-
+export default App; 

@@ -18,7 +18,6 @@ You pass the state of a user's [whatevers] from the App component down to compon
 event.target.value
 
 - Basically it retrieves value of whatever input it was called on.
-
 - If it’s your input element, whatever you insert in your input can be accessed through 'event.target.value'
 
 =================================================================
@@ -59,4 +58,51 @@ Hey Tiago, basically what this is doing in addTrack is first seeing if we can us
 
 For remove you're using the array .filter function to remove the track the same way .find checks to see if the track exists. It'll search the entire array and exclude any elements that has the same id as the track's id.
 
-  
+=================================================================
+
+
+- named exports need to be imported in curly braces
+
+
+- Every list item rendered by a React component needs to have a unique key, we were unable to hard code this, but we can now use the unique ID of each business as the key.
+
+
+=================================================================
+
+Q: In the last two modules, we learn three different ways of making API calls, is there a way of the three that has become standard?
+
+  xhr syntax 
+  fetch()
+  async/await
+
+
+A: XHR is how XML Request were made and it’s good to know how those work because not all browsers have implemented the fetch and async/await API yet. Going forward barring any browser incompatibility issues I’d suggest using fetch or async/await.
+
+
+Basically it retrieves value of whatever input it was called on.
+
+In this case, it’s your input element so whatever you insert in your input can be accessed through event.target.value
+
+
+=================================================================
+
+Create a method called 'derp' that passes the state of the term to this.props.onHurrDurr:
+
+  derp() {
+    this.props.onHurrDurr(this.state.term)
+  }
+
+=================================================================
+
+Create a method called 'handleTermChange' that sets the state of the search bar's term to the event target's value:
+
+  handleTermChange(event) {
+    this.setState({ term: event.target.value });
+  }
+
+=================================================================
+
+
+
+
+

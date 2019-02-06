@@ -30,8 +30,17 @@ map
 
 bind
 
-When to use CONST vs. when to use LET
+.match() 
+  - The match() method retrieves the result of matching a string against a regular expression.
+  - in APIs: The matches() method of the Element interface returns true if the element would be selected by the specified selector string; otherwise, it returns false.
 
+  
+
+
+
+-----------------------------------
+
+When to use CONST vs. when to use LET?
 
 -----------------------------------
 

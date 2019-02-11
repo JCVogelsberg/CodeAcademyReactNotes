@@ -1,0 +1,38 @@
+- Promise: An object that handles asynchronous data. 
+
+- A promise has three states:
+  * Pending: when a promise is created or waiting for data.
+  * Fulfilled: the asynchronous operation was handled successfully.
+  * Rejected: the asynchronous operation was unsuccessful.
+
+- Once a promise is fulfilled or rejected, you can chain an additional 
+method to the original promise.  <--- 'then' METHOD???
+
+----------------------------------------------  
+
+- The fetch() function:
+  * Creates a request object that contains relevant information that an API needs.
+  * Sends that request object to the API endpoint provided.
+  * Returns a promise that ultimately resolves to a response object, which contains the status of the promise with information the API sent back.
+
+- renderJsonResponse() is a helper function found in public/helperFunctions.js.
+
+----------------------------------------------
+// Boilerplate code for a GET request using fetch() and .then()
+
+  // AJAX function
+  const getSuggestions = () => {
+    const wordQuery = inputField.value;
+    const endpoint = `${url}${queryParams}${wordQuery}`;
+    
+    fetch(endpoint).then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error('Request failed!');
+    }, networkError => {
+      console.log(networkError.message)
+    }).then(jsonResponse => {
+      renderResponse(jsonResponse);
+    })
+  }

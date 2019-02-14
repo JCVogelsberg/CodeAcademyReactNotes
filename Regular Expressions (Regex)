@@ -1,0 +1,21 @@
+Regular Expressions (Regex)
+---------------------
+
+
+[^&]* = match any character that isn't '&''
+
+
+[ - Match 
+^ - '^' inside brackes = 'is not' (like a logic inverter)
+& - character to match
+] - end of match
+* - '0 or more' times
+
+
+
+
+Back in your conditional statement, redirect users to the following URL:
+
+
+
+Interpolate your client ID and redirect URI variables In place of CLIENT_ID and REDIRECT_URI.

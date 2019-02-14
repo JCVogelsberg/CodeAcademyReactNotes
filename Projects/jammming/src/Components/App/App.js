@@ -3,8 +3,8 @@ import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
+import Spotify from '../../util/Spotify.js';
 
-// DO I NEED TO IMPORT TRACK.js or TRACKLIST.js ???
 
 class App extends Component {
   constructor(props) {
@@ -112,7 +112,9 @@ class App extends Component {
   }
 
   search(searchTerm) {
-    console.log(searchTerm);
+    Spotify.search(searchTerm).then(searchResults => {
+      this.setState({ searchResults: searchResults });
+    })
   }
 
   render() {

@@ -68,6 +68,30 @@ const Spotify = {
       })
     )
   },
+
+  // Gets a user's ID from Spotify, creates a new playlist, adds tracks to that playlist
+  savePlaylist(name,trackURIs) {
+    if (!name || !trackUris.length) {
+      return;
+    }
+    const accessToken = Spotify.getAccessToken();
+    const headers = { headers: { Authorization: `Bearer ${accessToken}` } };
+    let userID;
+
+    // Return user's ID from Spotify API
+    return fetch('https://api.spotify.com/v1/me', { headers: headers })
+    .then(
+      response => {
+        if(response.ok) {
+          return response.json();
+        }
+      })
+    .then(
+      jsonResponse => {
+        userID = jsonResponse.id;
+      }
+    )
+
 }
 
 export default Spotify;

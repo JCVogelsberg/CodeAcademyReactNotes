@@ -13,45 +13,45 @@ class App extends Component {
     this.state = {
       searchResults: [
         {
-          name: 'Somewhere Near Japan', 
+          name: 'Island Girl (I\'m Gonna Make Her Mine)', 
           artist: 'The Beach Boys', 
           album: 'Still Cruisin\'', 
           year: '1989',
           id: '01' 
         },
         {
-          name: 'European Swallow', 
-          artist: 'The Refreshments', 
-          album: 'Fizzy, Fuzzy, Big & Buzzy', 
-          year: '1996',
+          name: 'Green & Dumb', 
+          artist: 'Roger Clyne & The Peacemakers', 
+          album: 'Honky Tonk Union', 
+          year: '1999',
           id: '02' 
         },
         {
-          name: 'Queen Bitch', 
+          name: 'Modern Love', 
           artist: 'David Bowie', 
-          album: 'Hunky Dory', 
-          year: '1971',
+          album: 'Let\'s Dance', 
+          year: '1983',
           id: '03' 
         },
         {
-          name: 'Get It Faster', 
+          name: 'Work', 
           artist: 'Jimmy Eat World', 
-          album: 'Bleed American', 
-          year: '2001',
+          album: 'Futures', 
+          year: '2004',
           id: '04' 
         },
         {
-          name: 'Life During Wartime', 
+          name: '(Nothing But) Flowers', 
           artist: 'Talking Heads', 
-          album: 'Fear of Music', 
-          year: '1979',
+          album: 'Naked', 
+          year: '1988',
           id: '05' 
         },
         {
-          name: 'Anna Begins', 
+          name: 'New Frontier', 
           artist: 'Counting Crows', 
-          album: 'August & Everything After', 
-          year: '1993',
+          album: 'Hard Candy', 
+          year: '2002',
           id: '06' 
         }
       ],

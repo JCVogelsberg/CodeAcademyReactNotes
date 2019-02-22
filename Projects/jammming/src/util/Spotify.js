@@ -71,7 +71,7 @@ const Spotify = {
 
   // Gets a user's ID from Spotify, creates a new playlist, adds tracks to that playlist
   savePlaylist(name,trackURIs) {
-    if (!name || !trackUris.length) {
+    if (!name || !trackURIs.length) {
       return;
     }
     const accessToken = Spotify.getAccessToken();
@@ -91,7 +91,7 @@ const Spotify = {
         userID = jsonResponse.id;
       }
     )
-
+  }
 }
 
 export default Spotify;

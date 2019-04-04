@@ -9,3 +9,4 @@ Sites That Use React.JS:
 - fbi.gov
 - dailymotion.com
 - cantunsee.space
+- walmart.com

@@ -10,3 +10,4 @@ Sites That Use React.JS:
 - dailymotion.com
 - cantunsee.space
 - walmart.com
+- avclub.com

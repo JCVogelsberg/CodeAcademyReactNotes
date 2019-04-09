@@ -11,3 +11,4 @@ Sites That Use React.JS:
 - cantunsee.space
 - walmart.com
 - avclub.com
+- nytimes.com

@@ -1,49 +1,89 @@
-DEFINITIONS:
+DEFINITIONS
+-------------
+
 
 Callback function
 
+------------------------------------------------------
+
 Object
+
+------------------------------------------------------
 
 Event
 
+------------------------------------------------------
+
 Spread operator, Rest Operator
+
+------------------------------------------------------
 
 Props
 
+------------------------------------------------------
+
 State
+
+------------------------------------------------------
 
 setState
 
+------------------------------------------------------
+
 this
+
+------------------------------------------------------
+
 
 fetch 
 
+------------------------------------------------------
+
 then
 
-async/await (separate or together?)
+------------------------------------------------------
+
+async
+
+------------------------------------------------------
+
+await - Await allows you to block an asynchronous call, allowing you to have better control on when the data is being fetch and overall increasing code readability. 
+
+------------------------------------------------------
 
 event.target.value
 
+------------------------------------------------------
+
 filter 
+
+------------------------------------------------------
 
 map
 
+------------------------------------------------------
+
 bind
+
+------------------------------------------------------
 
 .match() 
   - The match() method retrieves the result of matching a string against a regular expression.
   - in APIs: The matches() method of the Element interface returns true if the element would be selected by the specified selector string; otherwise, it returns false.
 
+------------------------------------------------------
+
   
 
 
 
------------------------------------
+
 
 When to use CONST vs. when to use LET?
 
------------------------------------
+------------------------------------------------------
 
 Create a "Book of Spells" 
 - commonly used methods
 - rare but particularly useful methods
+

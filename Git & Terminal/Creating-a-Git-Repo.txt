@@ -1,0 +1,16 @@
+Creating a Git Repo
+---------------------
+
+- Create repository @ Github.com
+
+- Create repo folder on computer
+
+- Navigate to repo directory in terminal
+
+- git remote add origin https://github.com/JCVogelsberg/Repo-Name.git
+
+- git commit -m 'Intitial commit - work computer'
+
+- git push -u origin master
+
+- fin.

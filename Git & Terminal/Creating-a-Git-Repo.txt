@@ -9,7 +9,7 @@ Creating a Git Repo
 
 - git remote add origin https://github.com/JCVogelsberg/Repo-Name.git
 
-- git commit -m 'Intitial commit - work computer'
+- git commit -m 'Initial commit - work computer'
 
 - git push -u origin master
 
